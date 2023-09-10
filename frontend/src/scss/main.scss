@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans&family=Source+Code+Pro&display=swap");
+
+$font-family-base: "Public Sans", sans-serif;
+$font-family-code: "Source Code Pro", monospace;
+
+@import "../../node_modules/bootstrap/scss/_functions.scss";
+@import "../../node_modules/bootstrap/scss/_variables.scss";
+
+$light: #f3e6eb;
+$dark: #080205;
+$primary: #c43636;
+$secondary: #36cbd3;
+$accent: #3264ff;
+$danger: #ff5733;
+$success: #4caf50;
+$warning: #fedc56;
+
+// Every colors related to PortalGuessr start with the prefix 'pg-'.
+$portalguessr-theme-colors: (
+  "pg-primary": $primary,
+  "pg-secondary": $secondary,
+  "pg-accent": $accent,
+  "pg-light": $light,
+  "pg-dark": $dark,
+  "pg-warning": $warning,
+  "pg-success": $success,
+  "pg-danger": $danger,
+);
+
+$theme-colors: map-merge($portalguessr-theme-colors, $theme-colors);
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
