@@ -13,7 +13,11 @@ const BottomFooter = () => {
       </h6>
       <span>
         Interested in contributing? Open a{" "}
-        <a target="_blank" href="#" className="link link-pg-primary">
+        <a
+          target="_blank"
+          href="https://github.com/XnonXte/PortalGuessr-FullStack/pulls"
+          className="link link-pg-primary"
+        >
           PR on GitHub!
         </a>
       </span>
