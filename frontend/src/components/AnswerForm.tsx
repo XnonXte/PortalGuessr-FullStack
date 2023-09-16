@@ -1,15 +1,28 @@
-const AnswerForm = () => {
+import { useState } from "react";
+import { AnswerFormProps } from "../types/AnswerFormProps";
+import { PortalChamberNumber } from "../types/guessr";
+
+const AnswerForm = ({ onAnswer }: AnswerFormProps) => {
+  const [answer, setAnswer] = useState("");
+
   return (
     <section className="my-4 mx-2">
-      <form className="d-flex flex-column gap-2">
+      <form
+        className="d-flex flex-column gap-2"
+        onSubmit={(e) => {
+          e.preventDefault();
+          onAnswer(answer as PortalChamberNumber);
+        }}
+      >
         <select
           className="form-select bg-pg-dark text-pg-light"
           name="chambers"
           id="chambers"
-          title="Insert a chamber"
+          title="Select a chamber to guess"
+          onChange={(e) => setAnswer(e.target.value)}
         >
           <option value="" disabled selected hidden>
-            Guess the chamber...
+            Guess the chamber
           </option>
           <option value="01">Chamber 01</option>
           <option value="02">Chamber 02</option>

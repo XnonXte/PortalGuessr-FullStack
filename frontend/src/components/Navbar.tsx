@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import logo from "../assets/logo.jpg";
+
 const Navbar = () => {
   return (
     <nav className="p-2 d-flex justify-content-between align-items-center gap-2 border-bottom border-pg-light">
@@ -23,7 +25,7 @@ const Navbar = () => {
           className="text-decoration-none d-flex gap-1 align-items-center"
         >
           <img
-            src="src\assets\logo.jpg"
+            src={logo}
             alt="PortalGuessr's logo"
             className="align-text-top rounded d-none d-sm-inline"
             style={{ width: "30px" }}
@@ -40,7 +42,6 @@ const Navbar = () => {
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               MozBackgroundClip: "text",
-              MozTextFillColor: "transparent",
             }}
           >
             PortalGuessr
