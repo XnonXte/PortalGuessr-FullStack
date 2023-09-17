@@ -6,7 +6,7 @@ const MainFooter = () => {
       <h6>
         Like PortalGuessr?{" "}
         <a target="_blank" href="https://github.com/XnonXte/PortalGuessr">
-          Try PortalGuessr Discord Bot
+          Try PortalGuessr Discord Bot 🤖
         </a>
       </h6>
       <Link className="link link-pg-light" to="new-image">

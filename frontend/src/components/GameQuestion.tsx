@@ -1,12 +1,15 @@
-import { GuessrProps } from "../types/GuessrProps";
+import { useContext } from "react";
 
-const Guessr = ({
-  image,
-  current,
-  max,
-  timeoutCounter,
-  difficulty,
-}: GuessrProps) => {
+import { GuessrContext } from "./Game";
+
+const GameQuestion = () => {
+  const { currentQuestion, counter, currentQuestionIndex, questions } =
+    useContext(GuessrContext);
+
+  const currentRound = currentQuestionIndex + 1;
+  const totalRounds = questions.length;
+  const { difficulty, url } = currentQuestion;
+
   let difficultyColor;
   switch (difficulty) {
     case "Easy":
@@ -24,7 +27,7 @@ const Guessr = ({
   }
 
   function formatTimeoutCounter(timeoutSeconds: number) {
-    // Function to format the timer to "00:00"
+    // Format the counter appearance to "00:00".
     const minutes = Math.floor(timeoutSeconds / 60);
     const seconds = timeoutSeconds % 60;
     const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
@@ -35,21 +38,20 @@ const Guessr = ({
   return (
     <section className="my-4 mx-2 d-flex flex-column justify-content-center align-items-center">
       <h4 className="mb-4 px-1">
-        <i className="bi bi-stopwatch-fill"></i>{" "}
-        {formatTimeoutCounter(timeoutCounter)}
+        <i className="bi bi-stopwatch-fill"></i> {formatTimeoutCounter(counter)}
       </h4>
       <img
-        src={image}
-        alt="Chamber image"
+        src={url}
+        alt="PortalGuessr's chamber image"
         className="img-fluid rounded-3 w-75 h-auto"
       />
       <div className="mt-4 d-flex align-items-center gap-2">
         <span className="fw-bold py-2 px-1 border rounded bg-pg-dark">
-          {current} / {max}
+          {currentRound} / {totalRounds}
         </span>
         <span
           className={`py-2 px-1 border rounded bg-pg-${difficultyColor} text-pg-${
-            difficulty === "Very Hard" ? "light" : "dark"
+            difficulty === "Medium" ? "dark" : "light"
           }`}
         >
           {difficulty}
@@ -59,4 +61,4 @@ const Guessr = ({
   );
 };
 
-export default Guessr;
+export default GameQuestion;

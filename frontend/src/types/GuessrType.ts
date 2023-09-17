@@ -33,4 +33,5 @@ export interface GuessrQuestions {
 export interface GuessrHistory extends GuessrQuestions {
   userAnswer: PortalChamberNumber;
   isUserAnswerCorrect: boolean;
+  historyId: string;
 }

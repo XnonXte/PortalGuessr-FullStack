@@ -1,19 +1,19 @@
-const FrequentlyAskedQuestions = () => {
+const Faq = () => {
   return (
-    <article className="my-4 mx-2">
+    <section className="my-4 mx-2">
       <h4 className="text-center">F.A.Q.</h4>
       <ul className="list-group list-group-flush">
-        <li className="list-group-item bg-pg-dark text-pg-light bg-opacity-50">
-          <div className="fs-5 text-pg-primary">Is PortalGuessr free?</div>
+        <li className="list-group-item bg-pg-dark text-pg-light bg-opacity-25">
+          <h5 className="text-pg-primary">Is PortalGuessr free?</h5>
           <span>
             Yes! PortalGuessr is a free to use quiz-game for Portal maps and
             will stay as is for the being.
           </span>
         </li>
-        <li className="list-group-item bg-pg-dark text-pg-light bg-opacity-50">
-          <div className="fs-5 text-pg-primary">
+        <li className="list-group-item bg-pg-dark text-pg-light bg-opacity-25">
+          <h5 className="text-pg-primary">
             What is the goal with PortalGuessr moving forward?
-          </div>
+          </h5>
           <span>
             I certainly hope I can maintain PortalGuessr as the time progresses,
             as I think this is my passion-project for creating website
@@ -22,10 +22,10 @@ const FrequentlyAskedQuestions = () => {
             packed.
           </span>
         </li>
-        <li className="list-group-item bg-pg-dark text-pg-light bg-opacity-50">
-          <div className="fs-5 text-pg-primary">
+        <li className="list-group-item bg-pg-dark text-pg-light bg-opacity-25">
+          <h5 className="text-pg-primary">
             What are the tech-stacks for PortalGuessr?
-          </div>
+          </h5>
           <span>
             I will explain it here briefly since this is a quite nerdy. For the
             front-end, I use React, Bootstrap, and Bootstrap icons for creating
@@ -34,12 +34,12 @@ const FrequentlyAskedQuestions = () => {
             storing chamber images.
           </span>
         </li>
-        <li className="list-group-item bg-pg-dark text-pg-light bg-opacity-50">
-          <div className="fs-5 text-pg-primary">
+        <li className="list-group-item bg-pg-dark text-pg-light bg-opacity-25">
+          <h5 className="text-pg-primary">
             Is the code for PortalGuessr open-source?
-          </div>
+          </h5>
           <span>
-            Yes, at least for the time being. The code for this website is
+            Yes! At least for the time being. The code for this website is
             available on{" "}
             <a
               target="_blank"
@@ -55,8 +55,8 @@ const FrequentlyAskedQuestions = () => {
           </span>
         </li>
       </ul>
-    </article>
+    </section>
   );
 };
 
-export default FrequentlyAskedQuestions;
+export default Faq;

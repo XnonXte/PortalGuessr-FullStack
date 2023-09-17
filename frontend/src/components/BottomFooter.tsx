@@ -1,8 +1,8 @@
 const BottomFooter = () => {
   return (
     <footer className="my-4 mx-2">
-      <h6>
-        Created with <i className="bi bi-heart-fill text-danger"></i> by{" "}
+      <div className="fs-5">
+        Created with 💖 by{" "}
         <a
           target="_blank"
           href="https://twitter.com/XnonXte"
@@ -10,7 +10,7 @@ const BottomFooter = () => {
         >
           XnonXte
         </a>
-      </h6>
+      </div>
       <span>
         Interested in contributing? Open a{" "}
         <a
