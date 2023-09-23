@@ -1,17 +1,5 @@
 // Copyright (c) 2023 XnonXte.
-// REST API server for PortalGuesser written in JavaScript with Express.js.
-
-/*
--- Server Endpoints --
-GET /chambers - Returns a list of the chambers collection.
-GET /chambers/:id - Returns a single of the chambers collection.
-POST /chambers/new - Creates a new document.
-PATCH /chambers/:id - Updates a document with a given body.
-DELETE /chambers/:id - Deletes a document from the database. 
-*/
-
-// TODO: Create user auth with JWT?
-// TODO: Create a home page (possibly one explaining all the possible routes?).
+// REST server for PortalGuesser written in JavaScript with Express.js.
 
 import express from "express";
 import cors from "cors";
@@ -37,18 +25,15 @@ async function main() {
 main().catch((err) => console.error(err));
 
 mongoose.connection
-  .on("open", () => {
-    console.log("Successfully connected to database!");
-  })
-  .on("close", () => {
-    console.log("Closed the database.");
-  })
-  .on("error", (err) => {
-    console.error(err);
-  });
+  .on("open", () => console.log("Database connected!"))
+  .on("error", (err) => console.error(err.message));
 
 app.use("/chambers", chamberRouter);
 
 app.listen(PORT, () => {
-  console.log(`Server is up at: ${PORT}`);
+  console.log(`Server is up at http://localhost:${PORT}/`);
+});
+
+app.get("/", (req, res) => {
+  res.send("Hello, PortalGuesser!");
 });

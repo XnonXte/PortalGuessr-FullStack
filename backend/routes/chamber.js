@@ -19,7 +19,7 @@ router.get("/:id", (req, res) => {
     .catch((error) => res.status(400).send({ message: error.message }));
 });
 
-// Get a random chamber.
+// Get a random chamber, amount is the parameter for how much do we want to retrieve.
 router.get("/random/:amount", (req, res) => {
   const amount = req.params.amount;
 
