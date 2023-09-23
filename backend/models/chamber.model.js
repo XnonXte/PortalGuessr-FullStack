@@ -1,6 +1,7 @@
-const { Schema, model } = require("mongoose");
+import mongoose from "mongoose";
+import crypto from "crypto";
 
-const ChambersSchema = new Schema({
+const ChamberSchema = new mongoose.Schema({
   url: {
     type: String,
     unique: true,
@@ -14,6 +15,12 @@ const ChambersSchema = new Schema({
     type: String,
     required: true,
   },
+  fileId: {
+    type: String,
+    required: true,
+    unique: true,
+    default: crypto.randomBytes(16).toString("hex"),
+  },
   createdAt: {
     type: Date,
     default: new Date(),
@@ -24,6 +31,6 @@ const ChambersSchema = new Schema({
   },
 });
 
-const Chambers = model("Chambers", ChambersSchema);
+const Chamber = mongoose.model("Chamber", ChamberSchema);
 
-module.exports = Chambers;
+export default Chamber;
