@@ -22,7 +22,7 @@ const GameQuestion = () => {
       difficultyColor = "danger";
       break;
     case "Very Hard":
-      difficultyColor = "primary";
+      difficultyColor = "secondary";
       break;
   }
 
@@ -37,12 +37,12 @@ const GameQuestion = () => {
 
   return (
     <section className="my-4 mx-2 d-flex flex-column justify-content-center align-items-center">
-      <h4 className="mb-4 px-1">
+      <h5 className="mb-4 px-1">
         <i className="bi bi-stopwatch-fill"></i> {formatTimeoutCounter(counter)}
-      </h4>
+      </h5>
       <img
         src={url}
-        alt="PortalGuessr's chamber image"
+        alt="PortalGuessr chamber image"
         className="img-fluid rounded-3 w-75 h-auto"
       />
       <div className="mt-4 d-flex align-items-center gap-2">

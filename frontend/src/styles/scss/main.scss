@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Public+Sans&family=Source+Code+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Martian+Mono&family=Poppins&display=swap");
 
-$font-family-base: "Public Sans", sans-serif;
-$font-family-code: "Source Code Pro", monospace;
+$font-family-base: "Poppins", sans-serif;
+$font-family-code: "Martian Mono", monospace;
 
-@import "../../node_modules/bootstrap/scss/_functions.scss";
-@import "../../node_modules/bootstrap/scss/_variables.scss";
+@import "../../../node_modules/bootstrap/scss/_functions.scss";
+@import "../../../node_modules/bootstrap/scss/_variables.scss";
 
 $light: #f3e6eb;
 $dark: #080205;
@@ -16,7 +16,7 @@ $success: #4caf50;
 $warning: #fedc56;
 
 // Every colors related to PortalGuessr start with the prefix 'pg-'.
-$portalguessr-theme-colors: (
+$pg-colors: (
   "pg-primary": $primary,
   "pg-secondary": $secondary,
   "pg-accent": $accent,
@@ -27,6 +27,15 @@ $portalguessr-theme-colors: (
   "pg-danger": $danger,
 );
 
-$theme-colors: map-merge($portalguessr-theme-colors, $theme-colors);
+$theme-colors: map-merge($pg-colors, $theme-colors);
 
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Martian Mono", monospace;
+}

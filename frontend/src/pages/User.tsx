@@ -1,5 +1,5 @@
 const User = () => {
-  return <div>TODO: Add create user page.</div>;
+  return <div>Coming soon...</div>;
 };
 
 export default User;

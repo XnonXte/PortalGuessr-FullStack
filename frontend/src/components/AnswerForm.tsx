@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 
 import { GuessrContext } from "./Game";
-import { PortalChamberNumber } from "../types/GuessrType";
+import { PortalChamberNumber } from "../types/GuessrTypes";
 
 const AnswerForm = () => {
   const { handleAnswer } = useContext(GuessrContext);
@@ -29,6 +29,7 @@ const AnswerForm = () => {
           <option value="" disabled hidden>
             Select a chamber
           </option>
+          <option value="00">Chamber 00</option>
           <option value="01">Chamber 01</option>
           <option value="02">Chamber 02</option>
           <option value="03">Chamber 03</option>

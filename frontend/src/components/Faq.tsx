@@ -6,8 +6,8 @@ const Faq = () => {
         <li className="list-group-item bg-pg-dark text-pg-light bg-opacity-25">
           <h5 className="text-pg-primary">Is PortalGuessr free?</h5>
           <span>
-            Yes! PortalGuessr is a free to use quiz-game for Portal maps and
-            will stay as is for the being.
+            Yes! PortalGuessr is a free quiz game for Portal maps that will
+            remain as is for the time being.
           </span>
         </li>
         <li className="list-group-item bg-pg-dark text-pg-light bg-opacity-25">
@@ -15,11 +15,11 @@ const Faq = () => {
             What is the goal with PortalGuessr moving forward?
           </h5>
           <span>
-            I certainly hope I can maintain PortalGuessr as the time progresses,
-            as I think this is my passion-project for creating website
+            I certainly hope I can keep PortalGuessr as the time move forward,
+            as I think this is my passion-project for making website
             applications or just application in general with the Discord bot. A
-            good end-goal would be creating a mobile app with more features
-            packed.
+            nice end goal would be to create a mobile app with more
+            functionality.
           </span>
         </li>
         <li className="list-group-item bg-pg-dark text-pg-light bg-opacity-25">
@@ -27,11 +27,11 @@ const Faq = () => {
             What are the tech-stacks for PortalGuessr?
           </h5>
           <span>
-            I will explain it here briefly since this is a quite nerdy. For the
-            front-end, I use React, Bootstrap, and Bootstrap icons for creating
-            the UI. For the back-end, I use Express.js creating the server,
-            MongoDB for storing data, and Google Drive via Google Drive API for
-            storing chamber images.
+            I'll explain it short here because it's rather nerdy. For the
+            front-end, I utilize React, Bootstrap, and Bootstrap icons to create
+            the user interface. For the backend, I use Express.js to build the
+            server, MongoDB to store data, and Google Drive via the Google Drive
+            API to save chamber images.
           </span>
         </li>
         <li className="list-group-item bg-pg-dark text-pg-light bg-opacity-25">
@@ -39,8 +39,8 @@ const Faq = () => {
             Is the code for PortalGuessr open-source?
           </h5>
           <span>
-            Yes! At least for the time being. The code for this website is
-            available on{" "}
+            Yes! For the time being, at least. The source code for this website
+            is available on{" "}
             <a
               target="_blank"
               href="https://github.com/XnonXte/PortalGuessr-FullStack"

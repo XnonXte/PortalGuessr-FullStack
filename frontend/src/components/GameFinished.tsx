@@ -1,9 +1,11 @@
 import { useContext } from "react";
 
+import GameStats from "./GameStats";
 import { GuessrContext } from "./Game";
 
 const GameFinished = () => {
-  const { history, questions } = useContext(GuessrContext);
+  const { history, questions, setIsGameFinished, setIsGameRunning } =
+    useContext(GuessrContext);
 
   const correctCount = history.reduce(
     (count, game) => (game.isUserAnswerCorrect ? count + 1 : count),
@@ -14,23 +16,28 @@ const GameFinished = () => {
     0
   );
 
+  function handleGameRestart() {
+    setIsGameFinished(false);
+    setIsGameRunning(false);
+  }
+
   return (
     <section className="my-4 mx-2 d-flex flex-column align-items-center text-center">
-      <h4 className="mb-3">Game Finished!</h4>
+      <h3>Game Finished!</h3>
       <div className="d-flex justify-content-center gap-2">
-        <div className="d-flex flex-column align-items-center">
-          <div className="fs-4">{correctCount}</div>
-          <span>Correct Answers</span>
-        </div>
-        <div className="d-flex flex-column align-items-center">
-          <div className="fs-4">{incorrectCount}</div>
-          <span>Incorrect Answers</span>
-        </div>
-        <div className="d-flex flex-column align-items-center">
-          <div className="fs-4">{questions.length}</div>
-          <span>Total Rounds</span>
-        </div>
+        <GameStats
+          correctCount={correctCount}
+          incorrectCount={incorrectCount}
+          totalRounds={questions.length}
+        />
       </div>
+      <button
+        className="mt-2 btn btn-pg-primary"
+        type="button"
+        onClick={handleGameRestart}
+      >
+        Restart Game
+      </button>
     </section>
   );
 };

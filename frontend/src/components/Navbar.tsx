@@ -5,17 +5,15 @@ import logo from "../assets/logo.jpg";
 const Navbar = () => {
   return (
     <nav className="p-2 d-flex justify-content-between align-items-center gap-2 border-bottom border-pg-light">
-      <div>
+      <div style={{ fontSize: "22px" }}>
         <Link
           to="/user/<id>"
           className="bi bi-person-circle mx-1 mx-md-2 text-pg-light"
-          style={{ fontSize: "22px" }}
           title="User profile"
         ></Link>
         <Link
           to="/about"
           className="bi bi-question mx-1 mx-md-2 text-pg-primary"
-          style={{ fontSize: "22px" }}
           title="About PortalGuessr"
         ></Link>
       </div>
@@ -48,17 +46,15 @@ const Navbar = () => {
           </span>
         </Link>
       </div>
-      <div>
+      <div style={{ fontSize: "22px" }}>
         <Link
           to="/user/stats/<id>"
           className="bi bi-bar-chart-fill mx-1 mx-md-2 text-pg-accent"
-          style={{ fontSize: "22px" }}
           title="User statistics"
         ></Link>
         <Link
           to="/setting"
           className="bi bi-gear-fill mx-1 mx-md-2 text-pg-light"
-          style={{ fontSize: "22px" }}
           title="Game setting"
         ></Link>
       </div>

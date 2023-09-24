@@ -1,18 +1,28 @@
-import { Link } from "react-router-dom";
-
 const MainFooter = () => {
   return (
-    <section className="text-center">
+    <footer className="my-4 mx-2 text-center">
       <h6>
-        Like PortalGuessr?{" "}
-        <a target="_blank" href="https://github.com/XnonXte/PortalGuessr">
-          Try PortalGuessr Discord Bot 🤖
+        Created by{" "}
+        <a
+          target="_blank"
+          href="https://twitter.com/XnonXte"
+          className="link link-pg-accent"
+        >
+          XnonXte
         </a>
       </h6>
-      <Link className="link link-pg-light" to="new-image">
-        Help me by adding more images!
-      </Link>
-    </section>
+      <span>
+        Join our{" "}
+        <a
+          className="text-decoration-none"
+          target="_blank"
+          href="https://discord.gg/wwDnTvw7"
+          style={{ color: "	#7289DA" }}
+        >
+          Discord Server <i className="bi bi-discord"></i>
+        </a>
+      </span>
+    </footer>
   );
 };
 

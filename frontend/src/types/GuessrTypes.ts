@@ -1,3 +1,5 @@
+export type GuessrDifficulty = "Easy" | "Medium" | "Hard" | "Very Hard" | null;
+
 export type PortalChamberNumber =
   | "00"
   | "01"
@@ -26,7 +28,7 @@ export type PortalChamberNumber =
 
 export interface GuessrQuestions {
   url: string;
-  difficulty: "Easy" | "Medium" | "Hard" | "Very Hard";
+  difficulty: GuessrDifficulty;
   answer: PortalChamberNumber;
 }
 

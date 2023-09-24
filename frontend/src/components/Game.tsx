@@ -1,42 +1,42 @@
-//TODO: Use 'useReducer' hook to store component states instead of the useState hook.
-
 import { useState, useEffect, createContext } from "react";
 
-import { useTimeout } from "../hooks/useTimeout";
-import GameFinished from "./GameFinished";
-import GamePlaying from "./GamePlaying";
-import { GuessrQuestions, GuessrHistory } from "../types/GuessrType";
-import { GuessrContextType } from "../types/GuessrContextType";
-import { PortalChamberNumber } from "../types/GuessrType";
+import useTimeoutTimer from "../hooks/useTimeoutTimer";
 
-// ! Placeholder images ONLY for development build.
-import { PLACEHOLDER } from "../../placeholders/placeholder";
+import GameStart from "./GameStart";
+import GamePlaying from "./GamePlaying";
+import GameFinished from "./GameFinished";
+
+import { GuessrQuestions, GuessrHistory } from "../types/GuessrTypes";
+import { GuessrContextType } from "../types/GuessrContextType";
+import { PortalChamberNumber } from "../types/GuessrTypes";
 
 export const GuessrContext = createContext({} as GuessrContextType);
 
 const Guessr = () => {
   const [questions, setQuestions] = useState([] as GuessrQuestions[]);
+  const [history, setHistory] = useState([] as GuessrHistory[]);
   const [currentQuestion, setCurrentQuestion] = useState({} as GuessrQuestions);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [history, setHistory] = useState([] as GuessrHistory[]);
+  const [isGameRunning, setIsGameRunning] = useState(false);
   const [isGameFinished, setIsGameFinished] = useState(false);
 
-  const TIMEOUT_SECONDS = 300;
-  const { counter, isFinished } = useTimeout(TIMEOUT_SECONDS);
+  const { counter, isCounterFinished, resetCounter } = useTimeoutTimer(0);
 
   useEffect(() => {
-    setQuestions(PLACEHOLDER);
-    setCurrentQuestion(PLACEHOLDER[currentQuestionIndex]);
-  }, []);
-
-  useEffect(() => {
-    // When the timer runs out.
-    if (isFinished) {
+    if (isCounterFinished) {
+      // When the timer runs out, switch the isGameFinished flag to true.
       setIsGameFinished(true);
+      return;
     }
-  }, [isFinished]);
+    // When the timer hasn't run out, do NOT switch the isGameFinished flag to true.
+    // This will be handy as we will reset the timer later
+    // without calling setIsGameFinished() explicitly.
+    setIsGameFinished(false);
+  }, [isCounterFinished]);
 
   function handleAnswer(chamber: PortalChamberNumber) {
+    // Handling user answer.
+    // We copy the question's data to history for later use.
     const randomId = crypto.randomUUID();
 
     if (chamber === currentQuestion.answer) {
@@ -67,13 +67,29 @@ const Guessr = () => {
   function showNextQuestion() {
     // Showing next question.
     if (currentQuestionIndex === questions.length - 1) {
-      // If we have run out of questions.
       setIsGameFinished(true);
       return;
     }
+
     const nextIndex = currentQuestionIndex + 1;
     setCurrentQuestionIndex(nextIndex);
     setCurrentQuestion(questions[nextIndex]);
+  }
+
+  let gameDisplay;
+
+  if (isGameRunning) {
+    // When the game is running.
+    if (isGameFinished) {
+      // When the game is finished
+      gameDisplay = <GameFinished />;
+    } else {
+      // When the game is not yet finished.
+      gameDisplay = <GamePlaying />;
+    }
+  } else {
+    // When the game is not running.
+    gameDisplay = <GameStart />;
   }
 
   return (
@@ -85,10 +101,15 @@ const Guessr = () => {
           currentQuestionIndex,
           history,
           counter,
+          setQuestions,
+          setCurrentQuestion,
+          setIsGameRunning,
+          setIsGameFinished,
           handleAnswer,
+          resetCounter,
         }}
       >
-        {isGameFinished ? <GameFinished /> : <GamePlaying />}
+        {gameDisplay}
       </GuessrContext.Provider>
     </>
   );
