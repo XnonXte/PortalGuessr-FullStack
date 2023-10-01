@@ -38,7 +38,10 @@ const GameQuestion = () => {
   return (
     <section className="my-4 mx-2 d-flex flex-column justify-content-center align-items-center">
       <h5 className="mb-4 px-1">
-        <i className="bi bi-stopwatch-fill"></i> {formatTimeoutCounter(counter)}
+        <i className="bi bi-stopwatch-fill"></i>{" "}
+        <span className={`text-pg-${counter > 10 ? "light" : "danger"}`}>
+          {formatTimeoutCounter(counter)}
+        </span>
       </h5>
       <img
         src={url}
@@ -50,7 +53,7 @@ const GameQuestion = () => {
           {currentRound} / {totalRounds}
         </span>
         <span
-          className={`py-2 px-1 border rounded bg-pg-${difficultyColor} text-pg-${
+          className={`py-2 px-1 border rounded bg-pg-${difficultyColor} text-${
             difficulty === "Medium" ? "dark" : "light"
           }`}
         >

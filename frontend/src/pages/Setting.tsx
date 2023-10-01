@@ -1,5 +1,5 @@
 const Setting = () => {
-  return <div>Coming soon...</div>;
+  return <div>TODO: Create setting page.</div>;
 };
 
 export default Setting;

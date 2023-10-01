@@ -5,9 +5,6 @@ import { GuessrContext } from "./Game";
 import { GuessrDifficulty } from "../types/GuessrTypes";
 
 import StartingCards from "./StartingCards";
-// import StartingCardsDescription from "./StartingCardsDescription";
-
-import "../styles/css/GameStart.css";
 
 const DEVELOPMENT_SERVER_URI = "http://localhost:5000/chambers/random"; // ! Endpoint only for development, do not use for production!
 
@@ -51,17 +48,15 @@ const GameStart = () => {
       })
       .catch((error) => {
         const errorMessage = error.message;
-
         console.error(errorMessage);
-        alert(`Failed to fetch data, error: ${errorMessage}`);
+        alert(`Error: ${errorMessage}`);
       });
   }
 
   return (
     <section className="my-4 mx-2">
-      <h3 className="text-center mb-4">Select a category to continue</h3>
+      <h4 className="text-center mb-4">Select a category to continue</h4>
       <StartingCards handleGameStart={handleGameStart} />
-      {/* <StartingCardsDescription /> -- Unused component.*/}
     </section>
   );
 };

@@ -1,8 +1,8 @@
 const AboutText = () => {
   return (
-    <div>
+    <section className="my-4 mx-2">
       <h3 className="text-center">About PortalGuessr</h3>
-      <p style={{ textAlign: "justify" }}>
+      <p className="text-justify">
         PortalGuessr is Lorem, ipsum dolor sit amet consectetur adipisicing
         elit. Dignissimos earum aliquid veniam sed, pariatur iusto? Magnam autem
         velit in! Tempore ipsa veritatis ducimus iusto, necessitatibus officiis
@@ -10,7 +10,7 @@ const AboutText = () => {
         assumenda laudantium similique nam eligendi quidem vero adipisci. Vitae
         exercitationem laborum laboriosam assumenda praesentium ea!
       </p>
-    </div>
+    </section>
   );
 };
 

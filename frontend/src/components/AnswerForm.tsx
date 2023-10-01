@@ -1,5 +1,8 @@
 import { useState, useContext } from "react";
 
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+
 import { GuessrContext } from "./Game";
 import { PortalChamberNumber } from "../types/GuessrTypes";
 
@@ -10,7 +13,7 @@ const AnswerForm = () => {
 
   return (
     <section className="my-4 mx-2">
-      <form
+      <Form
         className="d-flex flex-column gap-2"
         onSubmit={(e) => {
           e.preventDefault();
@@ -18,10 +21,9 @@ const AnswerForm = () => {
           setAnswer("");
         }}
       >
-        <select
-          className="form-select bg-pg-dark text-pg-light"
-          name="chambers"
-          id="chambers"
+        <Form.Select
+          aria-label="Chamber selection"
+          className="bg-pg-dark text-pg-light"
           value={answer}
           onChange={(e) => setAnswer(e.target.value)}
           required
@@ -52,11 +54,11 @@ const AnswerForm = () => {
           <option value="e00">Escape 00</option>
           <option value="e01">Escape 01</option>
           <option value="e02">Escape 02</option>
-        </select>
-        <button type="submit" className="btn btn-outline-pg-primary">
+        </Form.Select>
+        <Button type="submit" variant="pg-primary">
           Guess
-        </button>
-      </form>
+        </Button>
+      </Form>
     </section>
   );
 };

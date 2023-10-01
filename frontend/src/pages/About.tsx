@@ -4,9 +4,7 @@ import AboutText from "../components/AboutText";
 const About = () => {
   return (
     <>
-      <section className="my-4 mx-2">
-        <AboutText />
-      </section>
+      <AboutText />
       <Faq />
     </>
   );

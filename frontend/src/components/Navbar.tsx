@@ -2,10 +2,24 @@ import { Link } from "react-router-dom";
 
 import logo from "../assets/logo.jpg";
 
+const BRAND_STYLE = {
+  backgroundColor: "red",
+  backgroundImage:
+    "linear-gradient(45deg, rgba(196, 54, 54, 1) 35%, rgba(50, 100, 255, 1) 100%)",
+  backgroundSize: "100%",
+  backgroundRepeat: "repeat",
+  backgroundClip: "text",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
+  MozBackgroundClip: "text",
+};
+const LINK_SIZE = { fontSize: "1.375rem" };
+const LOGO_WIDTH = { width: "35px" };
+
 const Navbar = () => {
   return (
-    <nav className="p-2 d-flex justify-content-between align-items-center gap-2 border-bottom border-pg-light">
-      <div style={{ fontSize: "22px" }}>
+    <nav className="p-2 d-flex justify-content-between align-items-center gap-2 border-bottom border-light">
+      <div style={LINK_SIZE}>
         <Link
           to="/user/<id>"
           className="bi bi-person-circle mx-1 mx-md-2 text-pg-light"
@@ -26,27 +40,14 @@ const Navbar = () => {
             src={logo}
             alt="PortalGuessr's logo"
             className="align-text-top rounded d-none d-sm-inline"
-            style={{ width: "30px" }}
+            style={LOGO_WIDTH}
           />
-          <span
-            className="fs-4 fw-bold"
-            style={{
-              backgroundColor: "red",
-              backgroundImage:
-                "linear-gradient(45deg, rgba(196, 54, 54, 1) 35%, rgba(50, 100, 255, 1) 100%)",
-              backgroundSize: "100%",
-              backgroundRepeat: "repeat",
-              backgroundClip: "text",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              MozBackgroundClip: "text",
-            }}
-          >
+          <span className="fs-4 fw-bold" style={BRAND_STYLE}>
             PortalGuessr
           </span>
         </Link>
       </div>
-      <div style={{ fontSize: "22px" }}>
+      <div style={LINK_SIZE}>
         <Link
           to="/user/stats/<id>"
           className="bi bi-bar-chart-fill mx-1 mx-md-2 text-pg-accent"

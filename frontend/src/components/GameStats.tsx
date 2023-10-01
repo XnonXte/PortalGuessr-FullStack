@@ -1,3 +1,6 @@
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+
 import { GameStatsProps } from "../types/GameStatsProps";
 
 const GameStats = ({
@@ -6,20 +9,20 @@ const GameStats = ({
   totalRounds,
 }: GameStatsProps) => {
   return (
-    <>
-      <div className="py-4 px-2 d-flex flex-column justify-content-center align-items-center">
+    <Row className="mb-2 mx-auto">
+      <Col>
         <div className="fs-2">{correctCount}</div>
         <span>Correct Answers</span>
-      </div>
-      <div className="py-4 px-2 d-flex flex-column justify-content-center align-items-center">
+      </Col>
+      <Col>
         <div className="fs-2">{incorrectCount}</div>
         <span>Incorrect Answers</span>
-      </div>
-      <div className="py-4 px-2 d-flex flex-column justify-content-center align-items-center">
+      </Col>
+      <Col>
         <div className="fs-2">{totalRounds}</div>
         <span>Total Rounds</span>
-      </div>
-    </>
+      </Col>
+    </Row>
   );
 };
 

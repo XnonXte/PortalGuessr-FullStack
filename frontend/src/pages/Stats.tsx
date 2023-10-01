@@ -1,5 +1,5 @@
 const Stats = () => {
-  return <div>Coming soon...</div>;
+  return <div>TODO: Create stats page.</div>;
 };
 
 export default Stats;

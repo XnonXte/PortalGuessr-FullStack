@@ -1,5 +1,7 @@
 import { useContext } from "react";
 
+import Button from "react-bootstrap/Button";
+
 import GameStats from "./GameStats";
 import { GuessrContext } from "./Game";
 
@@ -22,22 +24,21 @@ const GameFinished = () => {
   }
 
   return (
-    <section className="my-4 mx-2 d-flex flex-column align-items-center text-center">
+    <section className="my-4 mx-2 text-center">
       <h3>Game Finished!</h3>
-      <div className="d-flex justify-content-center gap-2">
-        <GameStats
-          correctCount={correctCount}
-          incorrectCount={incorrectCount}
-          totalRounds={questions.length}
-        />
-      </div>
-      <button
-        className="mt-2 btn btn-pg-primary"
+      <GameStats
+        correctCount={correctCount}
+        incorrectCount={incorrectCount}
+        totalRounds={questions.length}
+      />
+      <Button
+        variant="primary"
+        className="mt-2"
         type="button"
         onClick={handleGameRestart}
       >
         Restart Game
-      </button>
+      </Button>
     </section>
   );
 };
