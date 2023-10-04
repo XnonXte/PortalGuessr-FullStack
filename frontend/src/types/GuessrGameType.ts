@@ -1,5 +1,7 @@
 export type GuessrDifficulty = "Easy" | "Medium" | "Hard" | "Very Hard" | null;
 
+export type GuessrDifficultyAbbreviate = "e" | "m" | "h" | "vh" | null;
+
 export type PortalChamberNumber =
   | "00"
   | "01"
@@ -26,13 +28,13 @@ export type PortalChamberNumber =
   | "e02"
   | null;
 
-export interface GuessrQuestions {
+export interface GuessrQuestion {
   url: string;
   difficulty: GuessrDifficulty;
   answer: PortalChamberNumber;
 }
 
-export interface GuessrHistory extends GuessrQuestions {
+export interface GuessrHistory extends GuessrQuestion {
   userAnswer: PortalChamberNumber;
   isUserAnswerCorrect: boolean;
   historyId: string;

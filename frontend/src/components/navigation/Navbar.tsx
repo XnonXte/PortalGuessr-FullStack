@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-import logo from "../assets/logo.jpg";
+import logo from "../../assets/logo.webp";
 
-const BRAND_STYLE = {
+const BRAND_BACKGROUND_COLOR = {
   backgroundColor: "red",
   backgroundImage:
     "linear-gradient(45deg, rgba(196, 54, 54, 1) 35%, rgba(50, 100, 255, 1) 100%)",
@@ -42,7 +42,7 @@ const Navbar = () => {
             className="align-text-top rounded d-none d-sm-inline"
             style={LOGO_WIDTH}
           />
-          <span className="fs-4 fw-bold" style={BRAND_STYLE}>
+          <span className="fs-4 fw-bold" style={BRAND_BACKGROUND_COLOR}>
             PortalGuessr
           </span>
         </Link>

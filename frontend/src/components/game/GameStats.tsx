@@ -1,7 +1,7 @@
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import { GameStatsProps } from "../types/GameStatsProps";
+import { GameStatsProps } from "../../proptypes/GameStatsProps";
 
 const GameStats = ({
   correctCount,

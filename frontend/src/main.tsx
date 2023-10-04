@@ -1,19 +1,38 @@
+/* 
+  Import conventions for this project:
+  -- Built-in library import (e.g., nodejs modules)
+
+  -- Third-party library import
+
+  -- First-party library import
+
+  -- Types declaration import
+
+  -- CSS import
+
+  -- Misc import
+
+  This project strictly follow the SOLID principle in the 
+  making of components, utils, etc.
+*/
+
+import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
+
 import { BrowserRouter } from "react-router-dom";
 
-// Custom bootstrap theme.
-import "./css/main.min.css";
+import App from "./App.tsx";
 
-// Bootstrap icons.
+import "./css/main.min.css";
 import "bootstrap-icons/font/bootstrap-icons.min.css";
 
 // ! Bootstrap's breakpoints. For development only!
 // import "./css/css-breakpoints.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  // We omit React's strict mode for more ease of development.
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
 );

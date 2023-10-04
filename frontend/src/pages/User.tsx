@@ -1,7 +1,7 @@
 const User = () => {
   return (
     <section className="my-4 mx-2 text-center">
-      <h4>User profile coming soon...</h4>
+      <h4>This feature is under construction...</h4>
     </section>
   );
 };

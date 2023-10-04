@@ -1,5 +1,5 @@
-import Faq from "../components/Faq";
-import AboutText from "../components/AboutText";
+import Faq from "../components/faq/Faq";
+import AboutText from "../components/faq/AboutText";
 
 const About = () => {
   return (

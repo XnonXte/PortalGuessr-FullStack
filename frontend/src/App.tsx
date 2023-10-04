@@ -1,20 +1,18 @@
-/* Trello for PortalGuessr's frontend: https://trello.com/b/NgVubCDX/portalguessr-fullstack*/
-
-// TODO: Fixed the bug where the game wouldn't fetch new questions after restarting.
+/* Trello for PortalGuessr on the web: https://trello.com/b/NgVubCDX/portalguessr-fullstack*/
 
 import { Route, Routes } from "react-router-dom";
 
 import Container from "react-bootstrap/Container";
 
-import MainFooter from "./components/MainFooter";
-import Navbar from "./components/Navbar";
 import Guessr from "./pages/Guessr";
 import User from "./pages/User";
-
 import Setting from "./pages/Setting";
 import Stats from "./pages/Stats";
 import NotFound from "./pages/NotFound";
 import About from "./pages/About";
+
+import MainFooter from "./components/footers/MainFooter";
+import Navbar from "./components/navigation/Navbar";
 
 import "./css/App.css";
 

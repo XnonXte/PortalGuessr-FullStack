@@ -23,8 +23,8 @@ const MainFooter = () => {
             Discord Server <i className="bi bi-discord"></i>
           </a>
         </p>
-        <code className="text-pg-danger">
-          PG v0.0.1 Dev Build - Do not distribute!
+        <code className="text-pg-warning" style={{ fontSize: "0.625rem" }}>
+          Found a bug? DM me on Discord @xnonxte
         </code>
       </div>
     </footer>

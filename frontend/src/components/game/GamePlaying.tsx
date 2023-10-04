@@ -1,5 +1,5 @@
 import GameQuestion from "./GameQuestion";
-import AnswerForm from "./AnswerForm";
+import AnswerForm from "../answer/AnswerForm";
 
 const GamePlaying = () => {
   return (

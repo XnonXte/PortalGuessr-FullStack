@@ -2,6 +2,9 @@ import { useContext } from "react";
 
 import { GuessrContext } from "./Game";
 
+import { formatTimeoutCounter } from "../../utils/formatTimeoutCounter";
+import { convertToDifficultyColor } from "../../utils/convertToDifficultyColor";
+
 const GameQuestion = () => {
   const { currentQuestion, counter, currentQuestionIndex, questions } =
     useContext(GuessrContext);
@@ -10,30 +13,7 @@ const GameQuestion = () => {
   const totalRounds = questions.length;
   const { difficulty, url } = currentQuestion;
 
-  let difficultyColor;
-  switch (difficulty) {
-    case "Easy":
-      difficultyColor = "success";
-      break;
-    case "Medium":
-      difficultyColor = "warning";
-      break;
-    case "Hard":
-      difficultyColor = "danger";
-      break;
-    case "Very Hard":
-      difficultyColor = "secondary";
-      break;
-  }
-
-  function formatTimeoutCounter(timeoutSeconds: number) {
-    // Format the counter appearance to "00:00".
-    const minutes = Math.floor(timeoutSeconds / 60);
-    const seconds = timeoutSeconds % 60;
-    const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
-    const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
-    return `${formattedMinutes}:${formattedSeconds}`;
-  }
+  const difficultyColor = convertToDifficultyColor(difficulty);
 
   return (
     <section className="my-4 mx-2 d-flex flex-column justify-content-center align-items-center">

@@ -9,15 +9,15 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 
-import beginnerCap from "../assets/easy-image-cap.jpg";
-import intermediateCap from "../assets/medium-image-cap.jpg";
-import advancedCap from "../assets/hard-image-cap.jpg";
-import expertCap from "../assets/very+hard-image-cap.jpg";
-import randomCap from "../assets/random-image-cap.jpg";
+import beginnerCap from "../../assets/easy-image-cap.webp";
+import intermediateCap from "../../assets/medium-image-cap.webp";
+import advancedCap from "../../assets/hard-image-cap.webp";
+import expertCap from "../../assets/very+hard-image-cap.webp";
+import randomCap from "../../assets/random-image-cap.webp";
 
-import { StartingCardsProps } from "../types/StartingCardsProps";
+import { StartingCardsProps } from "../../proptypes/StartingCardsProps";
 
-import "../css/StartingCards.css";
+import "../../css/StartingCards.css";
 
 const StartingCards = ({ handleGameStart }: StartingCardsProps) => {
   return (

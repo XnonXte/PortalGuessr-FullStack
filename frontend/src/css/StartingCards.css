@@ -3,6 +3,6 @@
 }
 
 .card-pg:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 18px -4px black;
+  transform: translateY(-3px);
+  box-shadow: 0 0 24px -6px black;
 }
