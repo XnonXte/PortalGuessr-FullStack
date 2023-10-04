@@ -23,9 +23,15 @@ const MainFooter = () => {
             Discord Server <i className="bi bi-discord"></i>
           </a>
         </p>
-        <code className="text-pg-warning" style={{ fontSize: "0.625rem" }}>
-          Found a bug? DM me on Discord @xnonxte
-        </code>
+        <a
+          target="_blank"
+          href="https://github.com/XnonXte/PortalGuessr-FullStack/issues"
+          className="link link-pg-warning text-decoration-none"
+        >
+          <code style={{ fontSize: "0.625rem" }}>
+            Found a bug? Report on GitHub! <i className="bi bi-bug"></i>
+          </code>
+        </a>
       </div>
     </footer>
   );
