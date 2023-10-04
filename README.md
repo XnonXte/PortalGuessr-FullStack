@@ -6,7 +6,15 @@ PortalGuessr on the web created with mobile appearance in mind - Still very WIP 
 
 ## Installation
 
-- Download the release version if available
+### Backend
+
+- Download the release version if available then navigate to `./backend` directory
+- Run `npm install` to install all of the required dependencies
+- Run `npm run server` to start the server or `npm run dev` to start a nodemon development server
+
+### Frontend 
+
+- Download the release version if available then navigate to `./frontend` directory
 - Run `npm install` to install all of the required dependencies
 - Run `npm run dev` to start a development host locally
 
