@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "placeholders"],
+  "include": ["src", "placeholders", "types", "types/proptypes"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -23,7 +23,7 @@ import { BrowserRouter } from "react-router-dom";
 
 import App from "./App.tsx";
 
-import "./css/main.min.css";
+import "./styles/css/main.min.css";
 import "bootstrap-icons/font/bootstrap-icons.min.css";
 
 // ! Bootstrap's breakpoints. For development only!

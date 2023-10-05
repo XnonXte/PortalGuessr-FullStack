@@ -1,5 +1,5 @@
-import { GuessrDifficulty } from "../types/GuessrGameType";
-import { GuessrDifficultyAbbreviate } from "../types/GuessrGameType";
+import { GuessrDifficulty } from "../../types/utiltypes/GuessrGameTypes";
+import { GuessrDifficultyAbbreviate } from "../../types/utiltypes/GuessrGameTypes";
 
 export function convertToAbbreviate(
   difficulty: GuessrDifficulty

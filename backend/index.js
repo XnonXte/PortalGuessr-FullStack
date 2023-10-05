@@ -1,4 +1,9 @@
-// Copyright (c) 2023 XnonXte.
+// ========================================
+// Copyright (c) 2023 XnonXte
+// This project is released under MIT License.
+// GitHub repo: https://github.com/XnonXte/PortalGuessr-FullStack
+// ========================================
+
 // REST server for PortalGuesser written in JavaScript with Express.js.
 
 import express from "express";

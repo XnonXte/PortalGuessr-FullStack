@@ -23,6 +23,8 @@ const MainFooter = () => {
             Discord Server <i className="bi bi-discord"></i>
           </a>
         </p>
+      </div>
+      <div>
         <a
           target="_blank"
           href="https://github.com/XnonXte/PortalGuessr-FullStack/issues"
@@ -31,6 +33,16 @@ const MainFooter = () => {
           <code style={{ fontSize: "0.625rem" }}>
             Found a bug? Report on GitHub! <i className="bi bi-bug"></i>
           </code>
+        </a>
+      </div>
+      <div>
+        <a
+          target="_blank"
+          href="https://github.com/XnonXte/PortalGuessr-FullStack"
+          className="link link-pg-light text-decoration-none"
+          style={{ fontSize: "0.8rem" }}
+        >
+          GitHub <i className="bi bi-github"></i>
         </a>
       </div>
     </footer>

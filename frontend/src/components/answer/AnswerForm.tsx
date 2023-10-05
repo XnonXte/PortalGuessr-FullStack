@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 import { GuessrContext } from "../game/Game";
-import { PortalChamberNumber } from "../../types/GuessrGameType";
+import { PortalChamberNumber } from "../../../types/utiltypes/GuessrGameTypes";
 
 const AnswerForm = () => {
   const { handleAnswer } = useContext(GuessrContext);

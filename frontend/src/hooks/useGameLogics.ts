@@ -1,29 +1,38 @@
 import { useEffect } from "react";
 
-import { PortalChamberNumber } from "../types/GuessrGameType";
-import { GameFunctionsParamType } from "../types/GameFunctionsHookParam";
+import { PortalChamberNumber } from "../../types/utiltypes/GuessrGameTypes";
+import { GuessrLogicsParamType } from "../../types/utiltypes/GameFunctionsHookParam";
 
 export function useGameLogics({
   isCounterFinished,
-  setIsGameFinished,
+  questions,
   currentQuestion,
-  history,
   currentQuestionIndex,
-  setHistory,
+  history,
+  isCounterStarted,
   setCurrentQuestion,
   setCurrentQuestionIndex,
-  questions,
-}: GameFunctionsParamType) {
+  setHistory,
+  setIsGameFinished,
+  setIsGameFinishedBeforeTimerRunOut,
+}: GuessrLogicsParamType) {
   useEffect(() => {
-    if (isCounterFinished) {
+    // Fired when the counter has reached 00:00
+    if (isCounterFinished && isCounterStarted) {
+      // Only fired when the counter has started and finished.
+      // This is to prevent this condition to be fired when the user
+      // is in the main menu where we set the initial seconds to 0.
+      evalAndSaveGameResult(false);
       setIsGameFinished(true);
       return;
     }
 
+    // Clean up procedure.
     setIsGameFinished(false);
   }, [isCounterFinished]);
 
   function handleAnswer(chamber: PortalChamberNumber) {
+    // Handling user answer (when the user submit the answer form).
     const historyId = crypto.randomUUID();
 
     if (chamber === currentQuestion.answer) {
@@ -36,11 +45,13 @@ export function useGameLogics({
   }
 
   function writeHistory(isUserAnswerCorrect: boolean, historyId: string) {
+    const { answer: userAnswer } = currentQuestion;
+
     setHistory([
       ...history,
       {
         ...currentQuestion,
-        userAnswer: currentQuestion.answer,
+        userAnswer,
         isUserAnswerCorrect,
         historyId,
       },
@@ -48,7 +59,10 @@ export function useGameLogics({
   }
 
   function showNextQuestion() {
+    // Showing next question.
     if (currentQuestionIndex === questions.length - 1) {
+      // If we've run out of questions.
+      evalAndSaveGameResult(true);
       setIsGameFinished(true);
       return;
     }
@@ -58,5 +72,23 @@ export function useGameLogics({
     setCurrentQuestion(questions[nextIndex]);
   }
 
-  return { handleAnswer };
+  function evalAndSaveGameResult(isGameFinished: boolean) {
+    setIsGameFinishedBeforeTimerRunOut(isGameFinished);
+    updateUserStats(isGameFinished);
+  }
+
+  function updateUserStats(isGameFinished: boolean) {
+    const userStats = JSON.parse(localStorage.getItem("USER_STATS") || "[]");
+    const updatedUserStats = JSON.stringify([
+      ...userStats,
+      {
+        history,
+        isGameFinished,
+      },
+    ]);
+
+    localStorage.setItem("USER_STATS", updatedUserStats);
+  }
+
+  return handleAnswer;
 }

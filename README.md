@@ -12,7 +12,7 @@ PortalGuessr on the web created with mobile appearance in mind - Still very WIP 
 - Run `npm install` to install all of the required dependencies
 - Run `npm run server` to start the server or `npm run dev` to start a nodemon development server
 
-### Frontend 
+### Frontend
 
 - Download the release version if available then navigate to `./frontend` directory
 - Run `npm install` to install all of the required dependencies

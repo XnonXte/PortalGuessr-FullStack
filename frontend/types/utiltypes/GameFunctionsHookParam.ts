@@ -1,6 +1,6 @@
-import { GuessrQuestion, GuessrHistory } from "./GuessrGameType";
+import { GuessrQuestion, GuessrHistory } from "./GuessrGameTypes";
 
-export interface GameFunctionsParamType {
+export interface GuessrLogicsParamType {
   questions: GuessrQuestion[];
   history: GuessrHistory[];
   setHistory: React.Dispatch<React.SetStateAction<GuessrHistory[]>>;
@@ -10,4 +10,8 @@ export interface GameFunctionsParamType {
   setCurrentQuestionIndex: React.Dispatch<React.SetStateAction<number>>;
   setIsGameFinished: React.Dispatch<React.SetStateAction<boolean>>;
   isCounterFinished: boolean;
+  isCounterStarted: boolean;
+  setIsGameFinishedBeforeTimerRunOut: React.Dispatch<
+    React.SetStateAction<boolean>
+  >;
 }

@@ -6,9 +6,9 @@ import Button from "react-bootstrap/Button";
 
 import GameStats from "./GameStats";
 
-import { getCorrectIncorrectCount } from "../../utils/getCorrectIncorrectCount";
+import { getCorrectAndIncorrectCount } from "../../utils/getCorrectAndIncorrectCount";
 
-import { GuessrQuestion } from "../../types/GuessrGameType";
+import { GuessrQuestion } from "../../../types/utiltypes/GuessrGameTypes";
 
 const GameFinished = () => {
   const {
@@ -19,9 +19,10 @@ const GameFinished = () => {
     setQuestions,
     setCurrentQuestion,
     setCurrentQuestionIndex,
+    isGameFinishedBeforeTimerRunOut,
   } = useContext(GuessrContext);
 
-  const [correctCount, incorrectCount] = getCorrectIncorrectCount(history);
+  const [correctCount, incorrectCount] = getCorrectAndIncorrectCount(history);
 
   function handleGameRestart() {
     setQuestions([] as GuessrQuestion[]);
@@ -33,11 +34,19 @@ const GameFinished = () => {
 
   return (
     <section className="my-4 mx-2 text-center">
-      <h3>Game Finished!</h3>
+      {isGameFinishedBeforeTimerRunOut ? (
+        <h3 className="mb-2">Game finished!</h3>
+      ) : (
+        <div className="mb-2">
+          <h3>You've run out of time!</h3>
+          <span>Don't worry, your result has been saved...</span>
+        </div>
+      )}
       <GameStats
         correctCount={correctCount}
         incorrectCount={incorrectCount}
         totalRounds={questions.length}
+        completedRounds={history.length}
       />
       <Button
         variant="primary"

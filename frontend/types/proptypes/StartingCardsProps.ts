@@ -1,4 +1,4 @@
-import { GuessrDifficulty } from "../types/GuessrGameType";
+import { GuessrDifficulty } from "../utiltypes/GuessrGameTypes";
 
 export interface StartingCardsProps {
   handleGameStart: (

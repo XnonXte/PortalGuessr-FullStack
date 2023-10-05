@@ -8,7 +8,7 @@ import { GuessrContext } from "./Game";
 
 import { convertToAbbreviate } from "../../utils/convertToAbbreviate";
 
-import { GuessrDifficulty } from "../../types/GuessrGameType";
+import { GuessrDifficulty } from "../../../types/utiltypes/GuessrGameTypes";
 
 // ! Endpoint only for development, do not use for production!
 const DEVELOPMENT_URL = "http://localhost:5000/chambers/random";
@@ -46,7 +46,7 @@ const GameStart = () => {
 
   return (
     <section className="my-4 mx-2">
-      <h4 className="text-center mb-4">Select a category to continue</h4>
+      <h4 className="text-center mb-4">Select a difficulty to continue</h4>
       <StartingCards handleGameStart={handleGameStart} />
     </section>
   );

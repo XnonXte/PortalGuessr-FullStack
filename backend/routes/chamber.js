@@ -1,5 +1,8 @@
 import express from "express";
+
 import Chamber from "../models/chamber.model.js";
+
+import { shuffleArray } from "../utils/shuffleArray.js";
 
 const router = express.Router();
 
@@ -36,6 +39,7 @@ router.get("/random/:amount/:difficulty", (req, res) => {
   const difficulty = req.params.difficulty;
 
   let difficultyContinuation;
+
   switch (difficulty) {
     case "e":
       difficultyContinuation = "Easy";
@@ -63,17 +67,18 @@ router.get("/random/:amount/:difficulty", (req, res) => {
 
 // Post a new chamber.
 router.post("/new", (req, res) => {
-  const { url, difficulty, answer } = req.body;
+  const { url, difficulty, answer, fileId } = req.body;
 
   const newChamber = new Chamber({
     url,
     difficulty,
     answer,
+    fileId,
   });
 
   newChamber
     .save()
-    .then(() => res.status(204))
+    .then((result) => res.json(result))
     .catch((error) => res.status(400).send({ message: error.message }));
 });
 
@@ -97,17 +102,8 @@ router.delete("/:id", (req, res) => {
   const id = req.params.id;
 
   Chamber.findByIdAndDelete(id)
-    .then(() => res.status(204))
+    .then((result) => res.json(result))
     .catch((error) => res.status(400).send({ message: error.message }));
 });
-
-function shuffleArray(array) {
-  // Shuffling array using Fisher-Yates sorting algorithm.
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
 
 export default router;

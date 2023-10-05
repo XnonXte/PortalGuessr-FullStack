@@ -1,10 +1,3 @@
-/* 
-Easy - 10 seconds per round.
-Medium - 15 seconds per round.
-Hard - 20 seconds per round.
-Very Hard - 25 seconds per round.
-*/
-
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
@@ -15,29 +8,30 @@ import advancedCap from "../../assets/hard-image-cap.webp";
 import expertCap from "../../assets/very+hard-image-cap.webp";
 import randomCap from "../../assets/random-image-cap.webp";
 
-import { StartingCardsProps } from "../../proptypes/StartingCardsProps";
+import { StartingCardsProps } from "../../../types/proptypes/StartingCardsProps";
 
-import "../../css/StartingCards.css";
+import "../../styles/css/StartingCards.css";
 
 const StartingCards = ({ handleGameStart }: StartingCardsProps) => {
   return (
-    <Row className="gap-2 gap-xxl-0">
+    <Row className="gap-2 gap-xl-0">
       {/* Easy difficulty */}
       <Col className="m-auto">
         <Card
-          className="card-pg bg-pg-success text-pg-light"
+          className="card-pg bg-pg-dark text-pg-light"
           onClick={() => handleGameStart("Easy", 120, 10)}
         >
           <Card.Img
             variant="top"
             src={beginnerCap}
             alt="Beginner image cap"
+            className="d-none d-xl-inline"
           ></Card.Img>
           <Card.Body>
-            <Card.Title className="text-center">
-              Beginner <span className="d-none d-xxl-inline">🔰</span>
+            <Card.Title className="text-center p-2 bg-pg-success rounded">
+              Easy <span className="d-none d-md-inline">🔰</span>
             </Card.Title>
-            <Card.Text as="ul" className="d-none d-md-block">
+            <Card.Text as="ul">
               <li>Easy difficulty</li>
               <li>2 minutes timeout</li>
               <li>10 total rounds</li>
@@ -49,19 +43,20 @@ const StartingCards = ({ handleGameStart }: StartingCardsProps) => {
       {/* Medium difficulty */}
       <Col className="m-auto">
         <Card
-          className="card-pg bg-pg-warning text-pg-dark"
+          className="card-pg bg-pg-dark text-pg-light"
           onClick={() => handleGameStart("Medium", 240, 10)}
         >
           <Card.Img
             variant="top"
             src={intermediateCap}
             alt="Intermediate image cap"
+            className="d-none d-xl-inline"
           ></Card.Img>
           <Card.Body>
-            <Card.Title className="text-center">
-              Intermediate <span className="d-none d-xxl-inline">⌛</span>
+            <Card.Title className="text-center p-2 bg-pg-warning rounded text-pg-dark">
+              Medium <span className="d-none d-md-inline">⌛</span>
             </Card.Title>
-            <Card.Text as="ul" className="d-none d-md-block">
+            <Card.Text as="ul">
               <li>Medium difficulty</li>
               <li>4 minutes timeout</li>
               <li>10 total rounds</li>
@@ -73,19 +68,20 @@ const StartingCards = ({ handleGameStart }: StartingCardsProps) => {
       {/* Hard difficulty */}
       <Col className="m-auto">
         <Card
-          className="card-pg bg-pg-danger text-pg-light"
+          className="card-pg bg-pg-dark text-pg-light"
           onClick={() => handleGameStart("Hard", 360, 10)}
         >
           <Card.Img
             variant="top"
             src={advancedCap}
             alt="Advanced image cap"
+            className="d-none d-xl-inline"
           ></Card.Img>
           <Card.Body>
-            <Card.Title className="text-center text-pg-light">
-              Advanced <span className="d-none d-xxl-inline">💪</span>
+            <Card.Title className="text-center p-2 bg-pg-danger rounded">
+              Hard <span className="d-none d-md-inline">💪</span>
             </Card.Title>
-            <Card.Text as="ul" className="d-none d-md-block">
+            <Card.Text as="ul">
               <li>Hard difficulty</li>
               <li>6 minutes timeout</li>
               <li>10 total rounds</li>
@@ -97,24 +93,25 @@ const StartingCards = ({ handleGameStart }: StartingCardsProps) => {
       {/* Very hard difficulty */}
       <Col className="m-auto">
         <Card
-          className="card-pg bg-pg-secondary text-pg-dark"
+          className="card-pg bg-pg-dark text-pg-light"
           onClick={() => handleGameStart("Very Hard", 480, 10)}
         >
           <Card.Img
             variant="top"
             src={expertCap}
             alt="Expert image cap"
+            className="d-none d-xl-inline"
           ></Card.Img>
           <Card.Body>
             <div
               className="card-title  fs-5
            fs-5 text-center"
             >
-              <Card.Title className="text-center">
-                Expert <span className="d-none d-xxl-inline">🔥</span>
+              <Card.Title className="text-center p-2 bg-pg-secondary rounded text-pg-dark">
+                Very Hard <span className="d-none d-md-inline">🔥</span>
               </Card.Title>
             </div>
-            <Card.Text as="ul" className="d-none d-md-block">
+            <Card.Text as="ul">
               <li>Very Hard difficulty</li>
               <li>8 minutes timeout</li>
               <li>10 total rounds</li>
@@ -126,24 +123,25 @@ const StartingCards = ({ handleGameStart }: StartingCardsProps) => {
       {/* Random difficulty */}
       <Col className="m-auto">
         <Card
-          className="card-pg bg-pg-primary text-pg-light"
+          className="card-pg bg-pg-dark text-pg-light"
           onClick={() => handleGameStart(null, 300, 10)}
         >
           <Card.Img
             variant="top"
             src={randomCap}
             alt="Random image cap"
+            className="d-none d-xl-inline"
           ></Card.Img>
           <Card.Body>
             <div
               className="card-title  fs-5
            fs-5 text-center"
             >
-              <Card.Title className="text-center">
-                Random <span className="d-none d-xxl-inline">🤔</span>
+              <Card.Title className="text-center p-2 bg-pg-primary rounded">
+                Random <span className="d-none d-md-inline">🤔</span>
               </Card.Title>
             </div>
-            <Card.Text as="ul" className="d-none d-md-block">
+            <Card.Text as="ul">
               <li>Random difficulty</li>
               <li>5 minutes timeout</li>
               <li>10 total rounds</li>

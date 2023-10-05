@@ -1,6 +1,6 @@
-import { GuessrHistory } from "../types/GuessrGameType";
+import { GuessrHistory } from "../../types/utiltypes/GuessrGameTypes";
 
-export function getCorrectIncorrectCount(history: GuessrHistory[]) {
+export function getCorrectAndIncorrectCount(history: GuessrHistory[]) {
   const correctCount = history.reduce(
     (count, game) => (game.isUserAnswerCorrect ? count + 1 : count),
     0

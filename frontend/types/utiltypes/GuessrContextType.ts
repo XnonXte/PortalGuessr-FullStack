@@ -2,7 +2,7 @@ import {
   GuessrHistory,
   GuessrQuestion,
   PortalChamberNumber,
-} from "./GuessrGameType";
+} from "./GuessrGameTypes";
 
 export interface GuessrContextType {
   questions: GuessrQuestion[];
@@ -10,6 +10,7 @@ export interface GuessrContextType {
   currentQuestionIndex: number;
   history: GuessrHistory[];
   counter: number;
+  isGameFinishedBeforeTimerRunOut: boolean;
   setQuestions: React.Dispatch<React.SetStateAction<GuessrQuestion[]>>;
   setCurrentQuestion: React.Dispatch<React.SetStateAction<GuessrQuestion>>;
   setCurrentQuestionIndex: React.Dispatch<React.SetStateAction<number>>;

@@ -1,4 +1,4 @@
-import { GuessrDifficulty } from "../types/GuessrGameType";
+import { GuessrDifficulty } from "../../types/utiltypes/GuessrGameTypes";
 
 export function convertToDifficultyColor(difficulty: GuessrDifficulty) {
   let difficultyColor;
