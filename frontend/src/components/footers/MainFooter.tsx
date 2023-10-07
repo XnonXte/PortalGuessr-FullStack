@@ -28,21 +28,21 @@ const MainFooter = () => {
         <a
           target="_blank"
           href="https://github.com/XnonXte/PortalGuessr-FullStack/issues"
-          className="link link-pg-warning text-decoration-none"
+          className="link link-pg-light text-decoration-none"
+          style={{ fontSize: "0.625rem" }}
         >
-          <code style={{ fontSize: "0.625rem" }}>
-            Found a bug? Report on GitHub! <i className="bi bi-bug"></i>
+          <code>
+            Found a bug? Report on GitHub! <i className="bi bi-github"></i>
           </code>
         </a>
       </div>
       <div>
         <a
-          target="_blank"
-          href="https://github.com/XnonXte/PortalGuessr-FullStack"
-          className="link link-pg-light text-decoration-none"
+          className="link link-pg-warning text-decoration-none"
+          href="mailto:quddussalam555@gmail.com"
           style={{ fontSize: "0.8rem" }}
         >
-          GitHub <i className="bi bi-github"></i>
+          Mail me a feedback
         </a>
       </div>
     </footer>

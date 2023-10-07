@@ -1,7 +1,5 @@
 /* Trello for PortalGuessr on the web: https://trello.com/b/NgVubCDX/portalguessr-fullstack*/
 
-// TODO: Create a working prototype with localStorage, stats page, etc.
-
 import { Route, Routes } from "react-router-dom";
 
 import Container from "react-bootstrap/Container";

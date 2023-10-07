@@ -1,154 +1,76 @@
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
+import ListGroup from "react-bootstrap/ListGroup";
 
-import beginnerCap from "../../assets/easy-image-cap.webp";
-import intermediateCap from "../../assets/medium-image-cap.webp";
-import advancedCap from "../../assets/hard-image-cap.webp";
-import expertCap from "../../assets/very+hard-image-cap.webp";
-import randomCap from "../../assets/random-image-cap.webp";
+import BlurhashImage from "../image/BlurhashImage";
 
 import { StartingCardsProps } from "../../../types/proptypes/StartingCardsProps";
 
 import "../../styles/css/StartingCards.css";
+import { GuessrDifficulty } from "../../../types/utiltypes/GuessrGameTypes";
+
+import { DIFFICULTY_CARDS } from "./_StartingCards";
 
 const StartingCards = ({ handleGameStart }: StartingCardsProps) => {
   return (
-    <Row className="gap-2 gap-xl-0">
-      {/* Easy difficulty */}
-      <Col className="m-auto">
-        <Card
-          className="card-pg bg-pg-dark text-pg-light"
-          onClick={() => handleGameStart("Easy", 120, 10)}
-        >
-          <Card.Img
-            variant="top"
-            src={beginnerCap}
-            alt="Beginner image cap"
-            className="d-none d-xl-inline"
-          ></Card.Img>
-          <Card.Body>
-            <Card.Title className="text-center p-2 bg-pg-success rounded">
-              Easy <span className="d-none d-md-inline">🔰</span>
-            </Card.Title>
-            <Card.Text as="ul">
-              <li>Easy difficulty</li>
-              <li>2 minutes timeout</li>
-              <li>10 total rounds</li>
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      </Col>
+    <Row className="m-auto gap-2 gap-xxl-0">
+      {DIFFICULTY_CARDS.map((card) => {
+        const {
+          difficultyDisplay,
+          handleGameStartParams,
+          imgSrc,
+          imgHash,
+          titleBgColor,
+          titleColor,
+          titleEmoji,
+        } = card;
+        const [difficulty, counter, rounds] = handleGameStartParams as [
+          GuessrDifficulty,
+          number,
+          number
+        ];
+        const randomId = crypto.randomUUID();
 
-      {/* Medium difficulty */}
-      <Col className="m-auto">
-        <Card
-          className="card-pg bg-pg-dark text-pg-light"
-          onClick={() => handleGameStart("Medium", 240, 10)}
-        >
-          <Card.Img
-            variant="top"
-            src={intermediateCap}
-            alt="Intermediate image cap"
-            className="d-none d-xl-inline"
-          ></Card.Img>
-          <Card.Body>
-            <Card.Title className="text-center p-2 bg-pg-warning rounded text-pg-dark">
-              Medium <span className="d-none d-md-inline">⌛</span>
-            </Card.Title>
-            <Card.Text as="ul">
-              <li>Medium difficulty</li>
-              <li>4 minutes timeout</li>
-              <li>10 total rounds</li>
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      </Col>
-
-      {/* Hard difficulty */}
-      <Col className="m-auto">
-        <Card
-          className="card-pg bg-pg-dark text-pg-light"
-          onClick={() => handleGameStart("Hard", 360, 10)}
-        >
-          <Card.Img
-            variant="top"
-            src={advancedCap}
-            alt="Advanced image cap"
-            className="d-none d-xl-inline"
-          ></Card.Img>
-          <Card.Body>
-            <Card.Title className="text-center p-2 bg-pg-danger rounded">
-              Hard <span className="d-none d-md-inline">💪</span>
-            </Card.Title>
-            <Card.Text as="ul">
-              <li>Hard difficulty</li>
-              <li>6 minutes timeout</li>
-              <li>10 total rounds</li>
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      </Col>
-
-      {/* Very hard difficulty */}
-      <Col className="m-auto">
-        <Card
-          className="card-pg bg-pg-dark text-pg-light"
-          onClick={() => handleGameStart("Very Hard", 480, 10)}
-        >
-          <Card.Img
-            variant="top"
-            src={expertCap}
-            alt="Expert image cap"
-            className="d-none d-xl-inline"
-          ></Card.Img>
-          <Card.Body>
-            <div
-              className="card-title  fs-5
-           fs-5 text-center"
+        return (
+          <Col key={randomId}>
+            <Card
+              className="mx-auto card-pg bg-pg-dark text-pg-light"
+              onClick={() => handleGameStart(difficulty, counter, rounds)}
             >
-              <Card.Title className="text-center p-2 bg-pg-secondary rounded text-pg-dark">
-                Very Hard <span className="d-none d-md-inline">🔥</span>
-              </Card.Title>
-            </div>
-            <Card.Text as="ul">
-              <li>Very Hard difficulty</li>
-              <li>8 minutes timeout</li>
-              <li>10 total rounds</li>
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      </Col>
-
-      {/* Random difficulty */}
-      <Col className="m-auto">
-        <Card
-          className="card-pg bg-pg-dark text-pg-light"
-          onClick={() => handleGameStart(null, 300, 10)}
-        >
-          <Card.Img
-            variant="top"
-            src={randomCap}
-            alt="Random image cap"
-            className="d-none d-xl-inline"
-          ></Card.Img>
-          <Card.Body>
-            <div
-              className="card-title  fs-5
-           fs-5 text-center"
-            >
-              <Card.Title className="text-center p-2 bg-pg-primary rounded">
-                Random <span className="d-none d-md-inline">🤔</span>
-              </Card.Title>
-            </div>
-            <Card.Text as="ul">
-              <li>Random difficulty</li>
-              <li>5 minutes timeout</li>
-              <li>10 total rounds</li>
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      </Col>
+              <Card.Img
+                variant="top"
+                as={BlurhashImage}
+                bhSrc={imgSrc}
+                bhAlt={`${difficultyDisplay} image cap`}
+                bhHash={imgHash}
+                // Weird width and height values to match up with 225px.
+                bhWidth={223}
+                bhHeight={125.44}
+              />
+              <Card.Body>
+                <Card.Title
+                  className={`text-center p-2 bg-pg-${titleBgColor} text-pg-${titleColor} rounded`}
+                >
+                  {difficultyDisplay}{" "}
+                  <span className="d-none d-md-inline">{titleEmoji}</span>
+                </Card.Title>
+                <ListGroup className="list-group-flush">
+                  <ListGroup.Item className="bg-pg-dark text-pg-light">
+                    {difficultyDisplay} difficulty
+                  </ListGroup.Item>
+                  <ListGroup.Item className="bg-pg-dark text-pg-light">
+                    {counter / 60} minutes
+                  </ListGroup.Item>
+                  <ListGroup.Item className="bg-pg-dark text-pg-light">
+                    {rounds} total rounds
+                  </ListGroup.Item>
+                </ListGroup>
+              </Card.Body>
+            </Card>
+          </Col>
+        );
+      })}
     </Row>
   );
 };

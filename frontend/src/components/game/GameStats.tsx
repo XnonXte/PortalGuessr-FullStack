@@ -6,7 +6,6 @@ import { GameStatsProps } from "../../../types/proptypes/GameStatsProps";
 const GameStats = ({
   correctCount,
   incorrectCount,
-  totalRounds,
   completedRounds,
 }: GameStatsProps) => {
   return (
@@ -18,10 +17,6 @@ const GameStats = ({
       <Col>
         <div className="fs-2">{incorrectCount}</div>
         <span>Incorrect Answers</span>
-      </Col>
-      <Col>
-        <div className="fs-2">{totalRounds}</div>
-        <span>Total Rounds</span>
       </Col>
       <Col>
         <div className="fs-2">{completedRounds}</div>

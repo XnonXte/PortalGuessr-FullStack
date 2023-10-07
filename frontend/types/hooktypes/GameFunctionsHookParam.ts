@@ -1,4 +1,4 @@
-import { GuessrQuestion, GuessrHistory } from "./GuessrGameTypes";
+import { GuessrQuestion, GuessrHistory } from "../utiltypes/GuessrGameTypes";
 
 export interface GuessrLogicsParamType {
   questions: GuessrQuestion[];

@@ -1,21 +1,3 @@
-/* 
-  Import conventions for this project:
-  -- Built-in library import (e.g., nodejs modules)
-
-  -- Third-party library import
-
-  -- First-party library import
-
-  -- Types declaration import
-
-  -- CSS import
-
-  -- Misc import
-
-  This project strictly follow the SOLID principle in the 
-  making of components, utils, etc.
-*/
-
 import React from "react";
 import ReactDOM from "react-dom/client";
 

@@ -1,8 +1,9 @@
 .card-pg {
   cursor: pointer;
+  width: 225px;
 }
 
 .card-pg:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   box-shadow: 0 0 24px -6px black;
 }

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 import { PortalChamberNumber } from "../../types/utiltypes/GuessrGameTypes";
-import { GuessrLogicsParamType } from "../../types/utiltypes/GameFunctionsHookParam";
+import { GuessrLogicsParamType } from "../../types/hooktypes/GameFunctionsHookParam";
 
 export function useGameLogics({
   isCounterFinished,
