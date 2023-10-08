@@ -13,9 +13,16 @@ const BlurhashImage = ({
 
   useEffect(() => {
     const img = new Image();
+
+    // When the image is still loading,
+    // this will ensure the state will remain false every time we change the "src".
+    setIsImageLoaded(false);
+
+    // When the image has ben loaded.
     img.onload = () => {
       setIsImageLoaded(true);
     };
+
     img.src = bhSrc;
   }, [bhSrc]);
 

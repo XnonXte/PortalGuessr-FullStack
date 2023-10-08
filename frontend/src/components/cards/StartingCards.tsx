@@ -17,8 +17,8 @@ const StartingCards = ({ handleGameStart }: StartingCardsProps) => {
           handleGameStartParams,
           imgSrc,
           imgHash,
-          titleBgColor,
-          titleColor,
+          bgColor,
+          textColor,
           titleEmoji,
         } = card;
         const [difficulty, counter, rounds] = handleGameStartParams as [
@@ -31,7 +31,7 @@ const StartingCards = ({ handleGameStart }: StartingCardsProps) => {
         return (
           <Col key={randomId}>
             <Card
-              className="mx-auto card-pg bg-pg-dark text-pg-light"
+              className={`mx-auto card-pg bg-pg-dark bg-pg-light border-3 border-pg-dark`}
               onClick={() => handleGameStart(difficulty, counter, rounds)}
             >
               <Card.Img
@@ -40,25 +40,25 @@ const StartingCards = ({ handleGameStart }: StartingCardsProps) => {
                 bhSrc={imgSrc}
                 bhAlt={`${difficultyDisplay} image cap`}
                 bhHash={imgHash}
-                bhWidth={223}
-                bhHeight={125.438}
-                // Specific width and height values for 14rem.
+                bhWidth={218}
+                bhHeight={121}
+                // Good width and height values for 14rem card size.
               />
               <Card.Body>
                 <Card.Title
-                  className={`text-center p-2 bg-pg-${titleBgColor} text-pg-${titleColor} rounded`}
+                  className={`text-center p-2 bg-pg-${bgColor} text-pg-${textColor} rounded`}
                 >
                   {difficultyDisplay}{" "}
                   <span className="d-none d-md-inline">{titleEmoji}</span>
                 </Card.Title>
                 <ListGroup className="list-group-flush">
-                  <ListGroup.Item className="bg-pg-dark text-pg-light">
+                  <ListGroup.Item className={`bg-pg-dark text-pg-light`}>
                     {difficultyDisplay} difficulty
                   </ListGroup.Item>
-                  <ListGroup.Item className="bg-pg-dark text-pg-light">
+                  <ListGroup.Item className={`bg-pg-dark text-pg-light`}>
                     {counter / 60} minutes
                   </ListGroup.Item>
-                  <ListGroup.Item className="bg-pg-dark text-pg-light">
+                  <ListGroup.Item className={`bg-pg-dark text-pg-light`}>
                     {rounds} total rounds
                   </ListGroup.Item>
                 </ListGroup>
