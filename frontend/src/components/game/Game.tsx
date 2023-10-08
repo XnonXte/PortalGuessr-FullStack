@@ -19,7 +19,6 @@ const Guessr = () => {
     isGameFinished,
     isCounterFinished,
     isCounterStarted,
-
     isGameFinishedBeforeTimerRunOut,
     resetCounter,
     setQuestions,

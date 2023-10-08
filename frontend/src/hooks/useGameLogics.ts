@@ -17,7 +17,7 @@ export function useGameLogics({
 }: GuessrLogicsParamType) {
   useEffect(() => {
     // Fired when the counter has reached 00:00
-    if (isCounterFinished && isCounterStarted) {
+    if (isCounterFinished === true && isCounterStarted === false) {
       // Only fired when the counter has started and finished.
       // This is to prevent this condition to be fired when the user
       // is in the main menu where we set the initial seconds to 0.

@@ -31,8 +31,12 @@ const GameQuestion = () => {
   return (
     <section className="my-4 mx-2 d-flex flex-column justify-content-center align-items-center">
       <h5 className="mb-4 px-1">
-        <i className="bi bi-stopwatch-fill"></i>{" "}
-        <span className={`text-pg-${counter > 10 ? "light" : "danger"}`}>
+        <span
+          className={`text-pg-${
+            counter <= 10 ? (counter % 2 === 0 ? "danger" : "light") : "light"
+          }`}
+        >
+          <i className="bi bi-stopwatch-fill"></i>{" "}
           {formatTimeoutCounter(counter)}
         </span>
       </h5>
