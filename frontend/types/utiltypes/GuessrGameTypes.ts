@@ -32,6 +32,7 @@ export interface GuessrQuestion {
   url: string;
   difficulty: GuessrDifficulty;
   answer: PortalChamberNumber;
+  bhHash: string;
 }
 
 export interface GuessrHistory extends GuessrQuestion {

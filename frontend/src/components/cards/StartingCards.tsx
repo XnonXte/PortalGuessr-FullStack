@@ -2,14 +2,10 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
-
 import BlurhashImage from "../image/BlurhashImage";
-
 import { StartingCardsProps } from "../../../types/proptypes/StartingCardsProps";
-
 import "../../styles/css/StartingCards.css";
 import { GuessrDifficulty } from "../../../types/utiltypes/GuessrGameTypes";
-
 import { DIFFICULTY_CARDS } from "./_StartingCards";
 
 const StartingCards = ({ handleGameStart }: StartingCardsProps) => {
@@ -44,9 +40,9 @@ const StartingCards = ({ handleGameStart }: StartingCardsProps) => {
                 bhSrc={imgSrc}
                 bhAlt={`${difficultyDisplay} image cap`}
                 bhHash={imgHash}
-                // Weird width and height values to match up with 225px.
                 bhWidth={223}
-                bhHeight={125.44}
+                bhHeight={125.438}
+                // Specific width and height values for 14rem.
               />
               <Card.Body>
                 <Card.Title

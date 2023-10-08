@@ -10,10 +10,8 @@ import Setting from "./pages/Setting";
 import Stats from "./pages/Stats";
 import NotFound from "./pages/NotFound";
 import About from "./pages/About";
-
 import MainFooter from "./components/footers/MainFooter";
 import Navbar from "./components/navigation/Navbar";
-
 import "./styles/css/App.css";
 
 const App = () => {

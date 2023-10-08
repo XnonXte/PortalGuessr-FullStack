@@ -1,13 +1,8 @@
 import { useContext } from "react";
-
 import axios from "axios";
-
 import StartingCards from "../cards/StartingCards";
-
 import { GuessrContext } from "./Game";
-
 import { convertToAbbreviate } from "../../utils/convertToAbbreviate";
-
 import { GuessrDifficulty } from "../../../types/utiltypes/GuessrGameTypes";
 
 // ! Endpoint only for development, do not use for production!

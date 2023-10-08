@@ -17,9 +17,13 @@ const ChamberSchema = new mongoose.Schema({
   },
   fileId: {
     type: String,
-    required: true,
+    default: () => crypto.randomBytes(16).toString("hex"),
+  },
+  bhHash: {
+    type: String,
     unique: true,
-    default: crypto.randomBytes(16).toString("hex"),
+    default: () =>
+      `placeholder-${Date.now()}-${crypto.randomBytes(8).toString("hex")}`,
   },
   createdAt: {
     type: Date,

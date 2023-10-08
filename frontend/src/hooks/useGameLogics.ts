@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-
 import { PortalChamberNumber } from "../../types/utiltypes/GuessrGameTypes";
 import { GuessrLogicsParamType } from "../../types/hooktypes/GameFunctionsHookParam";
 

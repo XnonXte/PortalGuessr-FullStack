@@ -1,13 +1,8 @@
 import { useContext } from "react";
-
 import { GuessrContext } from "./Game";
-
 import Button from "react-bootstrap/Button";
-
 import GameStats from "./GameStats";
-
 import { getCorrectAndIncorrectCount } from "../../utils/getCorrectAndIncorrectCount";
-
 import { GuessrQuestion } from "../../../types/utiltypes/GuessrGameTypes";
 
 const GameFinished = () => {

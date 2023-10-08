@@ -1,19 +1,30 @@
 import { useContext } from "react";
-
 import { GuessrContext } from "./Game";
-
+import { useBSBreakpointsResizer } from "../../hooks/useBSBreakpointsResizer";
+import BlurhashImage from "../image/BlurhashImage";
 import { formatTimeoutCounter } from "../../utils/formatTimeoutCounter";
 import { convertToDifficultyColor } from "../../utils/convertToDifficultyColor";
 
-import "../../styles/css/Image.css";
+// TODO: Create a responsive image based on Bootstrap breakpoints.
 
 const GameQuestion = () => {
   const { currentQuestion, counter, currentQuestionIndex, questions } =
     useContext(GuessrContext);
 
+  const [responsiveWidth, responsiveHeight] = useBSBreakpointsResizer({
+    xs: [15, 15],
+    sm: [20, 20],
+    md: [30, 30],
+    lg: [40, 40],
+    xl: [50, 50],
+    xxl: [60, 60],
+    initialWidth: 1920,
+    initialHeight: 1080,
+  });
+
   const currentRound = currentQuestionIndex + 1;
   const totalRounds = questions.length;
-  const { difficulty, url } = currentQuestion;
+  const { difficulty, url, bhHash } = currentQuestion;
 
   const difficultyColor = convertToDifficultyColor(difficulty);
 
@@ -25,9 +36,13 @@ const GameQuestion = () => {
           {formatTimeoutCounter(counter)}
         </span>
       </h5>
-      <div className="pg-image-figure">
-        <img src={url} alt="PortalGuessr chamber image" className="img-fluid" />
-      </div>
+      <BlurhashImage
+        bhAlt="PortalGuessr chamber image"
+        bhHash={bhHash}
+        bhSrc={url}
+        bhWidth={responsiveWidth}
+        bhHeight={responsiveHeight}
+      />
       <div className="mt-4 d-flex align-items-center gap-2">
         <span className="fw-bold py-2 px-1 border rounded bg-pg-dark">
           {currentRound} / {totalRounds}

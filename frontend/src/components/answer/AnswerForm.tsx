@@ -1,8 +1,6 @@
 import { useState, useContext } from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-
 import { GuessrContext } from "../game/Game";
 import { PortalChamberNumber } from "../../../types/utiltypes/GuessrGameTypes";
 

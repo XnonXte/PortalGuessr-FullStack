@@ -1,12 +1,9 @@
 import { createContext } from "react";
-
 import { useGameStates } from "../../hooks/useGameStates";
 import { useGameLogics } from "../../hooks/useGameLogics";
-
 import GameStart from "./GameStart";
 import GamePlaying from "./GamePlaying";
 import GameFinished from "./GameFinished";
-
 import { GuessrContextType } from "../../../types/utiltypes/GuessrContextType";
 
 export const GuessrContext = createContext({} as GuessrContextType);
