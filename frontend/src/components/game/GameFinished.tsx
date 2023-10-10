@@ -29,10 +29,10 @@ const GameFinished = () => {
   return (
     <section className="my-4 mx-2 text-center">
       {isGameFinishedBeforeTimerRunOut ? (
-        <h3 className="mb-3">Game finished!</h3>
+        <h3 className="mb-3">🥳 Game finished!</h3>
       ) : (
         <div className="mb-3">
-          <h3>You've run out of time!</h3>
+          <h3>😔 You've run out of time!</h3>
           <span>Don't worry, your result has been saved...</span>
         </div>
       )}

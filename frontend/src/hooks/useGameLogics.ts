@@ -21,7 +21,7 @@ export function useGameLogics({
       // Only fired when the counter has started and finished.
       // This is to prevent this condition to be fired when the user
       // is in the main menu where we set the initial seconds to 0.
-      evalAndSaveGameResult(false);
+      saveGameResult(false);
       setIsGameFinished(true);
       return;
     }
@@ -61,7 +61,7 @@ export function useGameLogics({
     // Showing next question.
     if (currentQuestionIndex === questions.length - 1) {
       // If we've run out of questions.
-      evalAndSaveGameResult(true);
+      saveGameResult(true);
       setIsGameFinished(true);
       return;
     }
@@ -71,22 +71,24 @@ export function useGameLogics({
     setCurrentQuestion(questions[nextIndex]);
   }
 
-  function evalAndSaveGameResult(isGameFinished: boolean) {
-    setIsGameFinishedBeforeTimerRunOut(isGameFinished);
-    updateUserStats(isGameFinished);
+  function saveGameResult(isFinished: boolean) {
+    setIsGameFinishedBeforeTimerRunOut(isFinished);
+    updateStats(isFinished);
   }
 
-  function updateUserStats(isGameFinished: boolean) {
-    const userStats = JSON.parse(localStorage.getItem("USER_STATS") || "[]");
-    const updatedUserStats = JSON.stringify([
-      ...userStats,
+  function updateStats(isFinished: boolean) {
+    const gameId = crypto.randomUUID();
+    const stats = JSON.parse(localStorage.getItem("USER_STATS") || "[]");
+    const updatedStats = JSON.stringify([
+      ...stats,
       {
+        gameId,
+        isFinished,
         history,
-        isGameFinished,
       },
     ]);
 
-    localStorage.setItem("USER_STATS", updatedUserStats);
+    localStorage.setItem("USER_STATS", updatedStats);
   }
 
   return handleAnswer;

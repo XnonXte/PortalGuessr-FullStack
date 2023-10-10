@@ -6,10 +6,10 @@
     <title>PortalGuessr Backend</title>
     <style>
       body {
-        background-color: #181818;
-        color: #eeeeee;
+        background-color: #252525;
+        color: #ededed;
         font-size: 14px;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       }
     </style>
   </head>
@@ -20,7 +20,7 @@
     <section>
       <h2>List of available endpoints</h2>
       <div>
-        <h4>Chamber router</h4>
+        <h4>/chambers</h4>
         <ol>
           <li>GET <code>/chambers</code> - get all chambers.</li>
           <li>
@@ -32,6 +32,13 @@
             GET <code>/chambers/random/&lt;amount&gt;</code> - get an
             <i>amount</i>
             number of chambers (random difficulty).
+          </li>
+          <li>
+            GET
+            <code>/chambers/random/&lt;amount&gt;/&lt;difficulty&gt;</code> -
+            get an
+            <i>amount</i>
+            number of chambers with <i>difficulty</i> difficulty.
           </li>
           <li>
             POST <code>/chambers/new</code> - create a new chamber collection.
@@ -46,7 +53,7 @@
         </ol>
       </div>
       <div>
-        <h4>User router</h4>
+        <h4>/users</h4>
         <ol>
           <li>TODO: Create chamber router...</li>
         </ol>

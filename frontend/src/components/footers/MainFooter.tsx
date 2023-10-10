@@ -42,7 +42,7 @@ const MainFooter = () => {
           href="mailto:quddussalam555@gmail.com"
           style={{ fontSize: "0.8rem" }}
         >
-          Mail me a feedback
+          Contact me (e.g., for feedback.)
         </a>
       </div>
     </footer>

@@ -41,7 +41,7 @@ const GameStart = () => {
 
   return (
     <section className="my-4 mx-2">
-      <h4 className="text-center mb-4">Select a difficulty to continue</h4>
+      <h4 className="text-center mb-4">⭐ Select a difficulty to continue</h4>
       <StartingCards handleGameStart={handleGameStart} />
     </section>
   );

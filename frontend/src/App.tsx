@@ -1,4 +1,4 @@
-/* Trello for PortalGuessr on the web: https://trello.com/b/NgVubCDX/portalguessr-fullstack*/
+// TODO: Trello for PortalGuessr on the web: https://trello.com/b/NgVubCDX/portalguessr-fullstack
 
 import { Route, Routes } from "react-router-dom";
 
@@ -28,6 +28,10 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
         <MainFooter />
+        {/* @Danger: Be sure to remove this after the release. */}
+        <code className="bg-pg-dark text-pg-danger">
+          PortalGuessr v0.0.1 beta-test
+        </code>
       </Container>
     </main>
   );

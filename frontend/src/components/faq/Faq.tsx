@@ -1,7 +1,7 @@
 const Faq = () => {
   return (
     <section className="my-4 mx-2">
-      <h5 className="text-center">F.A.Q.</h5>
+      <h3 className="text-center">❓ F.A.Q.</h3>
       <ul className="list-group list-group-flush">
         <li className="list-group-item bg-pg-dark bg-opacity-25">
           <h6 className="text-pg-primary">
