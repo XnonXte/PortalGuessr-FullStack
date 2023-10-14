@@ -10,7 +10,7 @@ export interface GuessrLogicsParamType {
   setCurrentQuestionIndex: React.Dispatch<React.SetStateAction<number>>;
   setIsGameFinished: React.Dispatch<React.SetStateAction<boolean>>;
   isCounterFinished: boolean;
-  isCounterStarted: boolean;
+  hasCounterInitialized: boolean;
   setIsGameFinishedBeforeTimerRunOut: React.Dispatch<
     React.SetStateAction<boolean>
   >;

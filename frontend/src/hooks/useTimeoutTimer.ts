@@ -3,22 +3,19 @@ import { useState, useEffect } from "react";
 export function useTimeoutTimer(initialSeconds: number) {
   const [counter, setCounter] = useState(initialSeconds);
   const [isCounterFinished, setIsCounterFinished] = useState(false);
-  const [isCounterStarted, setIsCounterStarted] = useState(false);
+  const [hasCounterInitialized, setHasCounterInitialized] = useState(false);
 
   useEffect(() => {
     let timer: number | undefined;
 
     if (counter > 0) {
-      // Set the flag when the counter starts
-      setIsCounterStarted(true);
+      setHasCounterInitialized(true);
 
       timer = setInterval(() => {
         setCounter((prevSeconds: number) => prevSeconds - 1);
       }, 1000);
     } else {
-      // Reset the flag when the counter finishes
       setIsCounterFinished(true);
-      setIsCounterStarted(false);
     }
 
     return () => {
@@ -27,11 +24,15 @@ export function useTimeoutTimer(initialSeconds: number) {
   }, [counter]);
 
   const resetCounter = (newSeconds: number) => {
-    // Reset the flag when the counter is reset
     setCounter(newSeconds);
     setIsCounterFinished(false);
-    setIsCounterStarted(false);
+    setHasCounterInitialized(false);
   };
 
-  return { counter, isCounterFinished, isCounterStarted, resetCounter };
+  return {
+    counter,
+    isCounterFinished,
+    hasCounterInitialized,
+    resetCounter,
+  };
 }

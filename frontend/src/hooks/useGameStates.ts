@@ -7,18 +7,22 @@ import {
 } from "../../types/utiltypes/GuessrGameTypes";
 
 export function useGameStates() {
+  // Questions array and questions history for every game.
   const [questions, setQuestions] = useState([] as GuessrQuestion[]);
   const [history, setHistory] = useState([] as GuessrHistory[]);
 
+  // Current question and its index in the array.
   const [currentQuestion, setCurrentQuestion] = useState({} as GuessrQuestion);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
+  // Several flags for the game's state.
   const [isGameRunning, setIsGameRunning] = useState(false);
   const [isGameFinished, setIsGameFinished] = useState(false);
   const [isGameFinishedBeforeTimerRunOut, setIsGameFinishedBeforeTimerRunOut] =
     useState(false);
 
-  const { counter, isCounterFinished, isCounterStarted, resetCounter } =
+  // Using counter.
+  const { counter, isCounterFinished, hasCounterInitialized, resetCounter } =
     useTimeoutTimer(0);
 
   return {
@@ -30,7 +34,7 @@ export function useGameStates() {
     isGameRunning,
     isGameFinished,
     isCounterFinished,
-    isCounterStarted,
+    hasCounterInitialized,
     isGameFinishedBeforeTimerRunOut,
     resetCounter,
     setQuestions,

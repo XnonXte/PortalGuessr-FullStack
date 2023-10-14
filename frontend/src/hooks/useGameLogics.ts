@@ -8,7 +8,7 @@ export function useGameLogics({
   currentQuestion,
   currentQuestionIndex,
   history,
-  isCounterStarted,
+  hasCounterInitialized,
   setCurrentQuestion,
   setCurrentQuestionIndex,
   setHistory,
@@ -17,10 +17,9 @@ export function useGameLogics({
 }: GuessrLogicsParamType) {
   useEffect(() => {
     // Fired when the counter has reached 00:00
-    if (isCounterFinished === true && isCounterStarted === false) {
-      // Only fired when the counter has started and finished.
-      // This is to prevent this condition to be fired when the user
-      // is in the main menu where we set the initial seconds to 0.
+    if (isCounterFinished && hasCounterInitialized) {
+      // Only fired when the counter has started (initialized) and finished.
+      // Pretty janky workaround I know.
       saveGameResult(false);
       setIsGameFinished(true);
       return;
@@ -44,6 +43,7 @@ export function useGameLogics({
   }
 
   function writeHistory(isUserAnswerCorrect: boolean, historyId: string) {
+    // Updating history of each game.
     const { answer: userAnswer } = currentQuestion;
 
     setHistory([
@@ -72,7 +72,10 @@ export function useGameLogics({
   }
 
   function saveGameResult(isFinished: boolean) {
+    // Setting the end screen, probably refactor-able but I'm too lazy...
     setIsGameFinishedBeforeTimerRunOut(isFinished);
+
+    // Updating user stats in local storage.
     updateStats(isFinished);
   }
 
