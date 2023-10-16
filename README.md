@@ -1,22 +1,22 @@
 # PortalGuessr Website
 
-![Mockup image](./mockup.png)
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.8rem; padding-bottom: 0.5rem">
+    <img src="./mockup.png" alt="Mockup image">
+    <div>
+        <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/XnonXte/PortalGuessr/total">
+        <img alt="GitHub" src="https://img.shields.io/github/license/XnonXte/PortalGuessr">
+        <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/XnonXte/PortalGuessr">
+        <img alt="Discord" src="https://img.shields.io/discord/1103578001318346812">
+    </div>
+</div>
 
-PortalGuessr on the web created with mobile appearance in mind - Still very WIP as of 02/10/2023.
+<div style="text-align: center;">PortalGuessr on the web created with mobile appearance in mind.</div>
 
 ## Installation
 
-### Backend
-
-- Download the release version if available then navigate to `./backend` directory
-- Run `npm install` to install all of the required dependencies
-- Run `npm run server` to start the server or `npm run dev` to start a nodemon development server
-
-### Frontend
-
-- Download the release version if available then navigate to `./frontend` directory
-- Run `npm install` to install all of the required dependencies
-- Run `npm run dev` to start a development host locally
+- Run `npm install` for both the backend and frontend directories to install the required dependencies to run the app.
+- In the backend folder, create a `.env` file containing `MONGODB_DATABASE_URL` for your MongoDB URL and `SERVER_PORT` for the port on which the server will run.
+- Run `npm run dev` for starting the development server on either the frontend or backend (you can also do `npm run server` on the backend if you don't want to start Nodemon).
 
 ## Trello Workspace
 
