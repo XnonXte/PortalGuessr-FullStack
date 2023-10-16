@@ -37,15 +37,10 @@ mongoose.connection
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static("./public"));
 
 app.use("/chambers", chamberRoute);
 app.use("/users", userRouter);
 
-app.get("/", (req, res) => {
-  res.static("index");
-});
-
 app.listen(PORT, () => {
-  console.log(`Server is up at http://localhost:${PORT}/`);
+  console.log(`Listening to http://localhost:${PORT}/`);
 });

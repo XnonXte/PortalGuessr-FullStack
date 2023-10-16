@@ -15,8 +15,8 @@ export function getHistoryStats(guessrStatistics: GuessrStatistic[]) {
     }
   }
 
-  const correctPercentage =
-    (correctCount / (correctCount + incorrectCount)) * 100;
+  const totalCount = correctCount + incorrectCount;
+  const correctPercentage = (correctCount / totalCount) * 100;
   const correctPercentageDisplay = `${
     parseFloat(correctPercentage.toFixed(1)) || 0
   }%`;
