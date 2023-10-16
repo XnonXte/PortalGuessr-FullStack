@@ -5,7 +5,6 @@ import ShareStats from "./ShareStats";
 const StatsDisplay = () => {
   return (
     <section className="my-4 mx-2">
-      {/* @Dummy */}
       <GameStatsDisplay
         played={10}
         correctPercentage="50%"

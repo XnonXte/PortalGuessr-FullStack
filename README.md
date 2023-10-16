@@ -1,15 +1,27 @@
-# PortalGuessr Website
+<h1>
+PortalGuessr Fullstack
+</h1>
 
-<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.8rem; padding-bottom: 0.5rem">
-    <img src="./mockup.png" alt="Mockup image">
-    <div>
-        <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/XnonXte/PortalGuessr/total">
-        <img alt="GitHub" src="https://img.shields.io/github/license/XnonXte/PortalGuessr">
-        <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/XnonXte/PortalGuessr">
-        <img alt="Discord" src="https://img.shields.io/discord/1103578001318346812">
-    </div>
-</div>
+<h2 align="center">
+  <a href="https://github.com/XnonXte/PortalGuessr"
+    ><img src="mockup.png" alt="PortalGuessr mockup"
+  /></a>
+</h2>
 
+<p align="center">
+  <a href="https://github.com/XnonXte/PortalGuessr-Fullstack/commits/main"><img alt="GitHub last commit (by committer)" src="https://img.shields.io/github/last-commit/XnonXte/PortalGuessr-Fullstack">
+</a>
+  <a href="https://github.com/XnonXte/PortalGuessr-Fullstack/releases/latest">
+    <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/XnonXte/PortalGuessr-Fullstack/total">
+</p>
+
+<p align="center">
+  <a href="#installation">Installation</a>
+  |
+  <a href="#trello-workspace">Trello Workspace</a>
+  |
+  <a href="#discord-server">Discord Server</a>
+</p>
 <div style="text-align: center;">PortalGuessr on the web created with mobile appearance in mind.</div>
 
 ## Installation
@@ -21,3 +33,7 @@
 ## Trello Workspace
 
 The official trello workspace for this project: <https://trello.com/b/NgVubCDX/portalguessr-fullstack>
+
+## Discord Server
+
+Join the Discord server to get the latest news about PortalGuessr: https://discord.gg/djWRTEM8XZ
