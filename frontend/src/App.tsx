@@ -21,9 +21,9 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Guessr />} />
-          <Route path="/user/:id" element={<User />} />
+          <Route path="/user" element={<User />} />
           <Route path="/about" element={<About />} />
-          <Route path="/user/stats/:id" element={<Stats />} />
+          <Route path="/user/stats" element={<Stats />} />
           <Route path="/setting" element={<Setting />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import StatsDisplay from "../components/stats/StatsDisplay";
+import StatsDisplay from "../components/history/History";
 
 const Stats = () => {
   return (

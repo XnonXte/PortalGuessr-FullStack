@@ -40,3 +40,9 @@ export interface GuessrHistory extends GuessrQuestion {
   isUserAnswerCorrect: boolean;
   historyId: string;
 }
+
+export interface GuessrStatistic {
+  history: GuessrHistory[];
+  isFinished: boolean;
+  gameId: string;
+}

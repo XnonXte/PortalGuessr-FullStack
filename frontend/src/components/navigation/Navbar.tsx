@@ -20,7 +20,7 @@ const Navbar = () => {
     <nav className="p-2 d-flex justify-content-between align-items-center gap-2 border-bottom border-light">
       <div style={LINK_SIZE}>
         <Link
-          to="/user/<id>"
+          to="/user"
           className="bi bi-person-circle mx-1 mx-md-2 text-pg-light"
           title="User profile"
         ></Link>
@@ -48,7 +48,7 @@ const Navbar = () => {
       </div>
       <div style={LINK_SIZE}>
         <Link
-          to="/user/stats/<id>"
+          to="/user/stats"
           className="bi bi-bar-chart-fill mx-1 mx-md-2 text-pg-accent"
           title="User statistics"
         ></Link>

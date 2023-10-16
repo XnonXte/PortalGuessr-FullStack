@@ -1,8 +1,26 @@
 import { Link } from "react-router-dom";
-import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 const Setting = () => {
+  function handleClearClick() {
+    const doStatsExist = localStorage.getItem("USER_STATS") ? true : false;
+
+    if (!doStatsExist) {
+      alert(
+        "Stats not detected! You might have cleared them already or they don't exist."
+      );
+      return;
+    }
+
+    const isConfirmed = confirm(
+      "Are you sure to delete user stats? This is irreversible!"
+    );
+
+    if (isConfirmed) {
+      localStorage.removeItem("USER_STATS");
+    }
+  }
+
   return (
     <>
       <Link to="/" className="text-decoration-none">
@@ -13,24 +31,19 @@ const Setting = () => {
         <div className="mb-4">
           <hr />
           <h6>📳 Difficulty Mod</h6>
-          <span>
-            These modifiers will override your game after they're applied.
-          </span>
-          <Form>
-            <Form.Check type="switch" label="Gray scale image"></Form.Check>
-            <Form.Check
-              type="switch"
-              label="Rotate image randomly"
-            ></Form.Check>
-            <Form.Check type="switch" label="Keep image blurred"></Form.Check>
-          </Form>
+          <p>These modifiers will override your game after they're applied.</p>
+          Coming soon...
           <hr />
         </div>
         <div className="mb-4">
           <hr />
 
           <h6 className="text-pg-danger">⛔ Danger Section!</h6>
-          <Button variant="pg-danger" className="text-white">
+          <Button
+            variant="pg-danger"
+            className="text-white"
+            onClick={handleClearClick}
+          >
             Clear current statistics
           </Button>
           <hr />

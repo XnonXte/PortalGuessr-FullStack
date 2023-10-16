@@ -85,9 +85,9 @@ export function useGameLogics({
     const updatedStats = JSON.stringify([
       ...stats,
       {
-        gameId,
-        isFinished,
         history,
+        isFinished,
+        gameId,
       },
     ]);
 

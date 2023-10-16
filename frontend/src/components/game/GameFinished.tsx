@@ -47,7 +47,7 @@ const GameFinished = () => {
         type="button"
         onClick={handleGameRestart}
       >
-        Restart Game
+        Back To Menu
       </Button>
     </section>
   );
