@@ -5,7 +5,7 @@ const AboutText = () => {
         <h3 className="text-center">🤔 About PortalGuessr</h3>
         <p>
           PortalGuessr is a quiz game to test your knowledge about Portal.
-          Previously a Discord bot, now came as an app on the web!
+          Previously a Discord bot, now come as a web app!
         </p>
       </div>
       <hr />

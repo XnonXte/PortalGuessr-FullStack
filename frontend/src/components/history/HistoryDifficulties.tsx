@@ -11,7 +11,7 @@ const DifficultiesDisplay = ({
 }: DifficultiesProps) => {
   return (
     <div className="mb-4">
-      <h4 className="text-center">🌟 Difficulties Played</h4>
+      <h4 className="text-center">🌟 Difficulty Statistics</h4>
       <div
         className="border rounded p-3 px-2
 border rounded"
