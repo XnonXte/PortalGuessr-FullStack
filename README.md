@@ -22,7 +22,8 @@ PortalGuessr Fullstack
   |
   <a href="#discord-server">Discord Server</a>
 </p>
-<div style="text-align: center;">PortalGuessr on the web created with mobile appearance in mind.</div>
+
+<h4 align="center">PortalGuessr on the web created with mobile appearance in mind.</h4>
 
 ## Installation
 
