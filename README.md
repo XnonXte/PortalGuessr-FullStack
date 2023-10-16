@@ -1,12 +1,12 @@
-<h1>
+<h2>
 PortalGuessr Fullstack
-</h1>
+</h2>
 
-<h2 align="center">
+<div align="center">
   <a href="https://github.com/XnonXte/PortalGuessr"
     ><img src="mockup.png" alt="PortalGuessr mockup"
   /></a>
-</h2>
+</div>
 
 <p align="center">
   <a href="https://github.com/XnonXte/PortalGuessr-Fullstack/commits/main"><img alt="GitHub last commit (by committer)" src="https://img.shields.io/github/last-commit/XnonXte/PortalGuessr-Fullstack">
