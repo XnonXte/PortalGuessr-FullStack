@@ -31,7 +31,6 @@ const Setting = () => {
         <div className="mb-4">
           <hr />
           <h6>📳 Difficulty Mod</h6>
-          <p>These modifiers will override your game after they're applied.</p>
           Coming soon...
           <hr />
         </div>
