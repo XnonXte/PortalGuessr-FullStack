@@ -12,10 +12,7 @@ const DifficultiesDisplay = ({
   return (
     <div className="mb-4">
       <h4 className="text-center">🌟 Difficulty Statistics</h4>
-      <div
-        className="border rounded p-3 px-2
-border rounded"
-      >
+      <div className="border-bottom border-top py-2">
         <Row className="gap-2 mx-auto">
           <Col className="p-2 m-2 bg-pg-success rounded d-flex flex-column justify-content-center align-items-center text-center">
             <div className="fs-2">{easyCount}</div>
