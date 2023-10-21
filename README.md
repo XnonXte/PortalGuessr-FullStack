@@ -1,16 +1,9 @@
-# PortalGuessr FullStack
+<h1>PortalGuessr FullStack</h1>
 
 <div align="center">
   <a href="https://github.com/XnonXte/PortalGuessr"
     ><img src="mockup.png" alt="PortalGuessr mockup"
   /></a>
-</div>
-
-<div align="center">
-  <a href="https://github.com/XnonXte/PortalGuessr-Fullstack/commits/main"><img alt="GitHub last commit (by committer)" src="https://img.shields.io/github/last-commit/XnonXte/PortalGuessr-Fullstack">
-</a>
-  <a href="https://github.com/XnonXte/PortalGuessr-Fullstack/releases/latest">
-    <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/XnonXte/PortalGuessr-Fullstack/total">
 </div>
 
 <div align="center">
@@ -21,7 +14,7 @@
   <a href="#discord-server">Discord Server</a>
 </div>
 
-<h4 align="center">PortalGuessr on the web created with mobile appearance in mind.</h4>
+<h4 align="center">PortalGuessr on the web, designed to be mobile friendly from the beginning.</h4>
 
 ## Installation
 
