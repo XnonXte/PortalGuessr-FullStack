@@ -47,7 +47,7 @@ const GameFinished = () => {
         completedRounds={history.length}
       />
       <Button
-        variant="primary"
+        variant="pg-primary"
         className="mt-3"
         type="button"
         onClick={handleGameRestart}
