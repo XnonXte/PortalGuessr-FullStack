@@ -1,13 +1,13 @@
 import { useRef } from "react";
 import html2canvas from "html2canvas";
-import DifficultiesDisplay from "./HistoryDifficulties";
-import GameStatsDisplay from "./HistoryStats";
-import ShareStats from "./Share";
+import HistoryDifficulties from "./HistoryDifficulties";
+import HistoryStats from "./HistoryStats";
+import Share from "./Share";
 import { getHistoryDifficulties } from "../../utils/getHistoryDifficulties";
 import { getHistoryStats } from "../../utils/getHistoryStats";
 import { GuessrStatistic } from "../../../types/utiltypes/GuessrGameTypes";
 
-const StatsDisplay = () => {
+const History = () => {
   const screenshotRef = useRef(null);
   const guessrStatistics = JSON.parse(
     localStorage.getItem("USER_STATS") || "[]"
@@ -45,22 +45,22 @@ const StatsDisplay = () => {
             "linear-gradient(90deg,hsl(220, 60%, 8%) 20%,hsl(320, 25%, 6%) 80%)",
         }}
       >
-        <GameStatsDisplay
+        <HistoryStats
           played={played}
           correctPercentage={correctPercentageDisplay}
           incorrectCount={incorrectCount}
           correctCount={correctCount}
         />
-        <DifficultiesDisplay
+        <HistoryDifficulties
           easyCount={easyCount}
           mediumCount={mediumCount}
           hardCount={hardCount}
           veryHardCount={veryHardCount}
         />
       </div>
-      <ShareStats onScreenshotClick={handleScreenshotClick} />
+      <Share onScreenshotClick={handleScreenshotClick} />
     </section>
   );
 };
 
-export default StatsDisplay;
+export default History;

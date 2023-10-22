@@ -4,7 +4,7 @@ interface ShareStatsProps {
   onScreenshotClick: () => void;
 }
 
-const ShareStats = ({ onScreenshotClick }: ShareStatsProps) => {
+const Share = ({ onScreenshotClick }: ShareStatsProps) => {
   return (
     <div className="mb-4">
       <h5 className="text-center">😎 Share</h5>
@@ -17,4 +17,4 @@ const ShareStats = ({ onScreenshotClick }: ShareStatsProps) => {
   );
 };
 
-export default ShareStats;
+export default Share;

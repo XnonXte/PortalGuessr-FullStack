@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import StatsDisplay from "../components/history/History";
+import History from "../components/history/History";
 
 const Stats = () => {
   return (
@@ -7,7 +7,7 @@ const Stats = () => {
       <Link to="/" className="text-decoration-none">
         <i className="bi bi-arrow-left"></i> Back
       </Link>
-      <StatsDisplay />
+      <History />
     </>
   );
 };

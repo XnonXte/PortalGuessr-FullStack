@@ -49,7 +49,7 @@ const Navbar = () => {
       <div style={LINK_SIZE}>
         <Link
           to="/stats"
-          className="bi bi-bar-chart-fill mx-1 mx-md-2 text-pg-accent"
+          className="bi bi-graph-up mx-1 mx-md-2 text-pg-accent"
           title="User statistics"
         ></Link>
         <Link

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { GuessrContext } from "./Game";
+import { GuessrContext } from "../../pages/Game";
 import { useBSBreakpointsResizer } from "../../hooks/useBSBreakpointsResizer";
 import BlurhashImage from "../image/BlurhashImage";
 import { formatTimeoutCounter } from "../../utils/formatTimeoutCounter";

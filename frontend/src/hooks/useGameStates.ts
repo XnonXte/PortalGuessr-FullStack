@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useTimeoutTimer } from "./useTimeoutTimer";
-
 import {
   GuessrQuestion,
   GuessrHistory,
@@ -25,7 +24,7 @@ export function useGameStates() {
   const { counter, isCounterFinished, hasCounterInitialized, resetCounter } =
     useTimeoutTimer(0);
 
-  return {
+  const states = {
     counter,
     questions,
     history,
@@ -45,4 +44,6 @@ export function useGameStates() {
     setIsGameFinished,
     setIsGameFinishedBeforeTimerRunOut,
   };
+
+  return states;
 }

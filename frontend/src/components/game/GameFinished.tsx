@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { GuessrContext } from "./Game";
+import { GuessrContext } from "../../pages/Game";
 import Button from "react-bootstrap/Button";
 import GameStats from "./GameStats";
 import { getCorrectAndIncorrectCount } from "../../utils/getCorrectAndIncorrectCount";

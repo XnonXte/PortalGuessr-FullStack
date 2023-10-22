@@ -1,34 +1,34 @@
 import { createContext } from "react";
-import { useGameStates } from "../../hooks/useGameStates";
-import { useGameLogics } from "../../hooks/useGameLogics";
-import GameStart from "./GameStart";
-import GamePlaying from "./GamePlaying";
-import GameFinished from "./GameFinished";
-import { GuessrContextType } from "../../../types/utiltypes/GuessrContextType";
+import { useGameLogics } from "../hooks/useGameLogics";
+import GameStart from "../components/game/GameStart";
+import GamePlaying from "../components/game/GamePlaying";
+import GameFinished from "../components/game/GameFinished";
+import { GuessrContextType } from "../../types/utiltypes/GuessrContextType";
+import { GameStatesHookParam } from "../../types/hooktypes/GameStatesHookParam";
 
 export const GuessrContext = createContext({} as GuessrContextType);
 
-const Guessr = () => {
+const Game = (props: GameStatesHookParam) => {
   const {
     counter,
-    questions,
-    history,
     currentQuestion,
     currentQuestionIndex,
-    isGameRunning,
-    isGameFinished,
-    isCounterFinished,
     hasCounterInitialized,
+    history,
+    isCounterFinished,
+    isGameFinished,
     isGameFinishedBeforeTimerRunOut,
+    isGameRunning,
+    questions,
     resetCounter,
-    setQuestions,
-    setHistory,
     setCurrentQuestion,
     setCurrentQuestionIndex,
-    setIsGameRunning,
+    setHistory,
     setIsGameFinished,
     setIsGameFinishedBeforeTimerRunOut,
-  } = useGameStates();
+    setIsGameRunning,
+    setQuestions,
+  } = props;
 
   const handleAnswer = useGameLogics({
     isCounterFinished,
@@ -69,6 +69,7 @@ const Guessr = () => {
         currentQuestionIndex,
         history,
         counter,
+        isGameFinishedBeforeTimerRunOut,
         setQuestions,
         setCurrentQuestion,
         setCurrentQuestionIndex,
@@ -76,7 +77,6 @@ const Guessr = () => {
         setIsGameFinished,
         handleAnswer,
         resetCounter,
-        isGameFinishedBeforeTimerRunOut,
       }}
     >
       {gameState}
@@ -84,4 +84,4 @@ const Guessr = () => {
   );
 };
 
-export default Guessr;
+export default Game;

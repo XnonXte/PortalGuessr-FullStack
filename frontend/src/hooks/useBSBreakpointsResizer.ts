@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { BSBreakpointsResizerHookParams } from "../../types/hooktypes/BSBreakpointsResizerHookParams";
+import { BSBreakpointsResizerHookParams } from "../../types/hooktypes/BSBreakpointsResizerHookParam";
 
 export function useBSBreakpointsResizer({
   lg,

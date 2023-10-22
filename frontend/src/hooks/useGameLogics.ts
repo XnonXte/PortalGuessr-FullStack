@@ -1,6 +1,9 @@
+// TODO: Figure out what's wrong with current implementation.
+// TODO: Stats shouldn't update every time you change the page.
+
 import { useEffect } from "react";
 import { PortalChamberNumber } from "../../types/utiltypes/GuessrGameTypes";
-import { GuessrLogicsParamType } from "../../types/hooktypes/GameFunctionsHookParam";
+import { GameFunctionsHookParam } from "../../types/hooktypes/GameFunctionsHookParam";
 
 export function useGameLogics({
   isCounterFinished,
@@ -14,7 +17,7 @@ export function useGameLogics({
   setHistory,
   setIsGameFinished,
   setIsGameFinishedBeforeTimerRunOut,
-}: GuessrLogicsParamType) {
+}: GameFunctionsHookParam) {
   useEffect(() => {
     // Fired when the counter has reached 00:00
     if (isCounterFinished && hasCounterInitialized) {

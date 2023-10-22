@@ -1,6 +1,6 @@
 import { GuessrQuestion, GuessrHistory } from "../utiltypes/GuessrGameTypes";
 
-export interface GuessrLogicsParamType {
+export interface GameFunctionsHookParam {
   questions: GuessrQuestion[];
   history: GuessrHistory[];
   setHistory: React.Dispatch<React.SetStateAction<GuessrHistory[]>>;

@@ -1,12 +1,12 @@
-import { GameStatsDisplay } from "../../../types/proptypes/GameStatsDisplay";
+import { HistoryStatsProps } from "../../../types/proptypes/GameStatsDisplay";
 
 //  linear-gradient(90deg,hsl(220, 60%, 8%) 20%,hsl(320, 25%, 6%) 80%)
-const GameStatsDisplay = ({
+const HistoryStats = ({
   correctCount,
   correctPercentage,
   incorrectCount,
   played,
-}: GameStatsDisplay) => {
+}: HistoryStatsProps) => {
   return (
     <div className="mb-4">
       <h4 className="text-center">📋 Statistics</h4>
@@ -32,4 +32,4 @@ const GameStatsDisplay = ({
   );
 };
 
-export default GameStatsDisplay;
+export default HistoryStats;

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import axios from "axios";
 import StartingCards from "../cards/StartingCards";
-import { GuessrContext } from "./Game";
+import { GuessrContext } from "../../pages/Game";
 import { convertToAbbreviate } from "../../utils/convertToAbbreviate";
 import { GuessrDifficulty } from "../../../types/utiltypes/GuessrGameTypes";
 
