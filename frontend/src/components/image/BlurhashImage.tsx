@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Blurhash } from "react-blurhash";
 import { BlurhasImageProps } from "../../../types/proptypes/BlurhasImageProps";
+import "../../styles/css/difficulty-modifiers.css";
 
 const BlurhashImage = ({
   bhSrc,
@@ -8,6 +9,8 @@ const BlurhashImage = ({
   bhHash,
   bhHeight = 128,
   bhWidth = 128,
+  className = "",
+  keepBlur = false,
 }: BlurhasImageProps) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
@@ -18,7 +21,7 @@ const BlurhashImage = ({
     // this will ensure the state will remain false every time we change the "src".
     setIsImageLoaded(false);
 
-    // When the image has ben loaded.
+    // When the image has been loaded.
     img.onload = () => {
       setIsImageLoaded(true);
     };
@@ -26,10 +29,32 @@ const BlurhashImage = ({
     img.src = bhSrc;
   }, [bhSrc]);
 
+  if (keepBlur) {
+    return (
+      <Blurhash
+        hash={bhHash}
+        width={bhWidth}
+        height={bhHeight}
+        className={className}
+      />
+    );
+  }
+
   return isImageLoaded ? (
-    <img src={bhSrc} alt={bhAlt} width={bhWidth} height={bhHeight} />
+    <img
+      src={bhSrc}
+      alt={bhAlt}
+      width={bhWidth}
+      height={bhHeight}
+      className={className}
+    />
   ) : (
-    <Blurhash hash={bhHash} width={bhWidth} height={bhHeight} />
+    <Blurhash
+      hash={bhHash}
+      width={bhWidth}
+      height={bhHeight}
+      className={className}
+    />
   );
 };
 

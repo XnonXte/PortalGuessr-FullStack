@@ -37,12 +37,12 @@ const Faq = () => {
         </li>
 
         <li className="list-group-item bg-pg-dark bg-opacity-25">
-          <h6 className="text-pg-primary">Can I contribute to PortalGuessr?</h6>
+          <h6 className="text-pg-primary">
+            Can I submit more images to PortalGuessr?
+          </h6>
           <span className="text-pg-light">
-            Yes, be sure to join the Discord server if you want to contribute to
-            PortalGuessr. Either as a developer or just as an ordinary user
-            submitting new images and such. The link is down below in the footer
-            section 👇
+            Yes, join the Discord server then navigate to{" "}
+            <i>#image-submissions</i> for submitting images.
           </span>
         </li>
       </ul>

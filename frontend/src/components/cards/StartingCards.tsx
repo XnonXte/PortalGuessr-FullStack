@@ -42,7 +42,6 @@ const StartingCards = ({ handleGameStart }: StartingCardsProps) => {
                 bhHash={imgHash}
                 bhWidth={218}
                 bhHeight={121}
-                // Good width and height values for 14rem card size.
               />
               <Card.Body>
                 <Card.Title

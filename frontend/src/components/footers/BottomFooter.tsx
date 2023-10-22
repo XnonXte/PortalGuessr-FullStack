@@ -7,7 +7,7 @@ const BottomFooter = () => {
         href="https://github.com/XnonXte/PortalGuessr"
         className="link link-pg-primary"
       >
-        Try Our Discord Bot 🤖
+        Try PG Discord Bot 🤖
       </a>
     </section>
   );

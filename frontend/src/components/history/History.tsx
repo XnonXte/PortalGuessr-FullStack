@@ -8,17 +8,19 @@ import { getHistoryStats } from "../../utils/getHistoryStats";
 import { GuessrStatistic } from "../../../types/utiltypes/GuessrGameTypes";
 
 const History = () => {
-  const screenshotRef = useRef(null);
   const guessrStatistics = JSON.parse(
     localStorage.getItem("USER_STATS") || "[]"
   ) as GuessrStatistic[];
-
   const { correctCount, correctPercentageDisplay, incorrectCount, played } =
     getHistoryStats(guessrStatistics);
   const { easyCount, hardCount, mediumCount, veryHardCount } =
     getHistoryDifficulties(guessrStatistics);
 
+  const screenshotRef = useRef(null);
+
   function handleScreenshotClick() {
+    // Function to handle screenshot.
+    // I use html2canvas for easy conversion from a div element to data url.
     const screenshotId = crypto.randomUUID();
 
     if (!screenshotRef.current) {
@@ -28,7 +30,7 @@ const History = () => {
     html2canvas(screenshotRef.current).then((canvas) => {
       const screenshotUrl = canvas.toDataURL("image/jpeg");
 
-      // Download screenshot.
+      // Create an invisible anchor link then download the image.
       const anchor = document.createElement("a");
       anchor.href = screenshotUrl;
       anchor.download = `screenshot-${screenshotId}`;

@@ -4,4 +4,6 @@ export interface BlurhasImageProps {
   bhHash: string;
   bhWidth?: number;
   bhHeight?: number;
+  className?: string;
+  keepBlur?: boolean;
 }

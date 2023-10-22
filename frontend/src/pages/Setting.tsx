@@ -46,7 +46,7 @@ const Setting = () => {
         <h4 className="text-center">⚙ Settings</h4>
         <div className="mb-4">
           <hr />
-          <h6>📳 Difficulty Mod</h6>
+          <h6>📳 Difficulty Modifiers</h6>
           <Form>
             <Form.Check
               type="switch"

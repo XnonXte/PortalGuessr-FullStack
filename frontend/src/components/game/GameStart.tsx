@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import axios from "axios";
 import StartingCards from "../cards/StartingCards";
-import { GuessrContext } from "../../pages/Game";
+import { GuessrContext } from "../../../types/utiltypes/GuessrContextType";
 import { convertToAbbreviate } from "../../utils/convertToAbbreviate";
 import { GuessrDifficulty } from "../../../types/utiltypes/GuessrGameTypes";
 
@@ -18,9 +18,10 @@ const GameStart = () => {
     amount: number
   ) {
     const difficultyAbbreviate = convertToAbbreviate(difficulty);
+    // Goofy workaround but it works!
     const endpoint = `${DEVELOPMENT_URL}/${
       amount + (difficultyAbbreviate !== null ? `/${difficultyAbbreviate}` : "")
-    }`; // Goofy workaround.
+    }`;
 
     async function fetchQuestions() {
       try {

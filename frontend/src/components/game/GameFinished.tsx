@@ -1,19 +1,22 @@
 import { useContext } from "react";
-import { GuessrContext } from "../../pages/Game";
+import { GuessrContext } from "../../../types/utiltypes/GuessrContextType";
 import Button from "react-bootstrap/Button";
 import GameStats from "./GameStats";
 import { getCorrectAndIncorrectCount } from "../../utils/getCorrectAndIncorrectCount";
 import { GuessrQuestion } from "../../../types/utiltypes/GuessrGameTypes";
+import { GuessrHistory } from "../../../types/utiltypes/GuessrGameTypes";
 
 const GameFinished = () => {
   const {
     history,
+    isGameFinishedBeforeTimerRunOut,
     setIsGameFinished,
     setIsGameRunning,
     setQuestions,
+    setHistory,
     setCurrentQuestion,
     setCurrentQuestionIndex,
-    isGameFinishedBeforeTimerRunOut,
+    resetCounter,
   } = useContext(GuessrContext);
 
   const [correctCount, incorrectCount] = getCorrectAndIncorrectCount(history);
@@ -21,9 +24,11 @@ const GameFinished = () => {
   function handleGameRestart() {
     setQuestions([] as GuessrQuestion[]);
     setCurrentQuestion({} as GuessrQuestion);
+    setHistory([] as GuessrHistory[]);
     setCurrentQuestionIndex(0);
     setIsGameFinished(false);
     setIsGameRunning(false);
+    resetCounter(0);
   }
 
   return (

@@ -13,7 +13,7 @@ const MainFooter = () => {
           </a>
         </h6>
         <p>
-          Join our{" "}
+          Join the{" "}
           <a
             className="text-decoration-none"
             target="_blank"
@@ -28,7 +28,7 @@ const MainFooter = () => {
         <a
           target="_blank"
           href="https://github.com/XnonXte/PortalGuessr-FullStack/issues"
-          className="link link-pg-light text-decoration-none"
+          className="link link-pg-light"
           style={{ fontSize: "0.625rem" }}
         >
           <code>
@@ -37,13 +37,9 @@ const MainFooter = () => {
         </a>
       </div>
       <div>
-        <a
-          className="link link-pg-warning text-decoration-none"
-          href="mailto:quddussalam555@gmail.com"
-          style={{ fontSize: "0.8rem" }}
-        >
-          Contact me (e.g., for feedback.)
-        </a>
+        <span className="text-pg-warning" style={{ fontSize: "0.8rem" }}>
+          DM me for feedback on Discord @xnonxte
+        </span>
       </div>
     </footer>
   );
