@@ -1,6 +1,6 @@
 const Version = () => {
   return (
-    <code className="bg-pg-dark text-pg-danger">
+    <code className="text-pg-light my-4 mx-2" style={{ fontSize: "0.5rem" }}>
       PortalGuessr v0.0.1 beta-test
     </code>
   );
